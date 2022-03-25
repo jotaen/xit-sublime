@@ -1,0 +1,81 @@
+%YAML 1.2
+# See http://www.sublimetext.com/docs/syntax.html
+---
+name: xit
+file_extensions: [xit]
+scope: source.xit
+contexts:
+  main:
+  - include: group
+
+  group:
+  # A group can either start with an item...
+  - match: '^(?=\[)'
+    push: item
+  # ...or with a title (single line)
+  - match: '^.*'
+    scope: title.xit
+    push: item
+
+  item:
+  # Exit on blank line.
+  - match: '^\s*$'
+    pop: 99999
+
+  # Open item.
+  - match: '\[ \](?= |$)'
+    scope: checkbox.open.xit
+    push:
+    - meta_scope: description.open.xit
+    - match: ''
+      push: priority
+
+  # Checked item.
+  - match: '\[x\](?= |$)'
+    scope: checkbox.checked.xit
+    push:
+    - meta_scope: description.checked.xit
+    - match: ''
+      push: priority
+
+  # Obsolete item.
+  - match: '\[~\](?= |$)'
+    scope: checkbox.obsolete.xit
+    push:
+    - meta_scope: description.obsolete.xit
+    - match: ''
+      push: priority
+
+  # Intermediate item (write-in-progress).
+  # Shall match: `[`, `[ `, `[]`
+  - match: '\[[ x~\]]?$'
+
+  # Something invalid.
+  - match: '^.*'
+    scope: invalid
+
+  priority:
+  - match: ' !*(?= |$)'
+    scope: priority.xit
+    push: description
+  - match: ''
+    push: description
+
+  description:
+  - include: due_date
+  - include: tag
+
+  # Keep matching, until it’s not a continuation
+  # of the description anymore.
+  - match: '^(?!    )'
+    pop: 3
+
+  due_date:
+  # Due date can be YYYY, YYYY-MM, YYYY-MM-DD,
+  # YYYY-MM-DDThh, YYYY-MM-DDThh:mm, or YYYY-MM-DDThh:mm:ss
+  - match: '-> (\d{4}(-\d{2}(-\d{2}(T\d{2}(:\d{2}(:\d{2})?)?)?)?)?)'
+    scope: due_date.xit
+
+  tag:
+  - match: '\#[\p{L}\d_]+'
+    scope: tag.xit

@@ -1,0 +1,54 @@
+{
+	"variables": {},
+	"globals": {},
+	"rules": [
+		{
+			"scope": "source.xit",
+			"foreground": "#ffffff",
+		},
+		{
+			"scope": "title.xit",
+			"font_style": "underline"
+		},
+		{
+			"scope": "checkbox.open.xit",
+			"foreground": "#73daff",
+			"font_style": "bold"
+		},
+		{
+			"scope": "checkbox.checked.xit",
+			"foreground": "#a9ff6b",
+			"font_style": "bold"
+		},
+		{
+			"scope": "checkbox.obsolete.xit",
+			"foreground": "#777777",
+			"font_style": "bold"
+		},
+		{
+			"scope": "priority.xit",
+			"foreground": "#ff3705",
+			"font_style": "bold"
+		},
+		{
+			"scope": "description.open.xit",
+			"foreground": "#bfd2d9"
+		},
+		{
+			"scope": "description.checked.xit",
+			"foreground": "#ababab"
+		},
+		{
+			"scope": "description.obsolete.xit",
+			"foreground": "#666666"
+		},
+		{
+			"scope": "due_date.xit",
+			"foreground": "#ca9eff"
+		},
+		{
+			"scope": "tag.xit",
+			"font_style": "italic"
+		}
+	]
+}

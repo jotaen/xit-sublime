@@ -1,0 +1,19 @@
+{
+	// Enforce Monokai scheme. Colors have special meaning
+	// we cannot use the general-purpose colors.
+	"color_scheme": "Monokai.sublime-color-scheme",
+
+	// Per specification, enforce indentation to be 4 spaces.
+	"smart_indent": false,
+	"detect_indentation": false,
+	"translate_tabs_to_spaces": true,
+	"tab_size": 4,
+
+	// Per specification, use UTF-8 encoding.
+	"default_encoding": "UTF-8",
+
+	// Tab completion doesn’t make sense for a data format,
+	// and it makes text-aligning harder.
+	"tab_completion": false,
+	"auto_complete": false,
+}

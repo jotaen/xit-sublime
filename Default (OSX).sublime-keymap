@@ -1,0 +1,12 @@
+[
+	{
+		"keys": ["ctrl+x"],
+		"command": "check"
+	}, {
+		"keys": ["ctrl+o"],
+		"command": "uncheck"
+	}, {
+		"keys": ["ctrl+n"],
+		"command": "obsolete"
+	},
+]

@@ -12,10 +12,15 @@ contexts:
   # A group can either start with an item...
   - match: '^(?=\[)'
     push: item
+
   # ...or with a title (single line)
-  - match: '^.*'
+  - match: '^[^\s].*'
     scope: title.xit
     push: item
+
+  # Anything else is invalid.
+  - match: '^.*'
+    scope: invalid
 
   item:
   # Exit on blank line.

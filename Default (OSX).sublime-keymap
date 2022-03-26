@@ -26,8 +26,17 @@
 		"command": "run_macro_file",
 		"args": {"file": "Packages/xit/functions/Append Item.sublime-macro"},
 		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "comment.xit.description" },
+			{ "key": "selector", "operator": "equal", "operand": "meta.xit.description" },
 			{ "key": "preceding_text", "operator": "regex_match", "operand": "^(\\[.\\]|    ).*", "match_all": true },
+		]
+	}, {
+		// Clear void checkbox
+		"keys": ["enter"],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/xit/functions/Clear Void Item.sublime-macro"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "meta.xit.description" },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^(\\[.\\] |    )$", "match_all": true },
 		]
 	}, {
 		// Insert subsequent description line
@@ -35,14 +44,41 @@
 		"command": "run_macro_file",
 		"args": {"file": "Packages/xit/functions/Append Description Line.sublime-macro"},
 		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "comment.xit.description" },
+			{ "key": "selector", "operator": "equal", "operand": "meta.xit.description" },
 			{ "key": "preceding_text", "operator": "regex_match", "operand": "^(\\[.\\]|    ).*", "match_all": true },
 		]
 	}, {
-		// Insert open box at beginning of line
+		// Insert open checkbox at beginning of line
 		"keys": ["["],
 		"command": "run_macro_file",
-		"args": {"file": "Packages/xit/functions/Insert Box.sublime-macro"},
+		"args": {"file": "Packages/xit/functions/Insert Open Checkbox.sublime-macro"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
+		]
+	}, {
+		// Insert open checkbox at beginning of line
+		"keys": ["o"],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/xit/functions/Insert Open Checkbox.sublime-macro"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
+		]
+	}, {
+		// Insert checked checkbox at beginning of line
+		"keys": ["x"],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/xit/functions/Insert Checked Checkbox.sublime-macro"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
+		]
+	}, {
+		// Insert obsolete checkbox at beginning of line
+		"keys": ["~"],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/xit/functions/Insert Obsolete Checkbox.sublime-macro"},
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 			{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },

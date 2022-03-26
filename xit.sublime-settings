@@ -11,9 +11,4 @@
 
 	// Per specification, use UTF-8 encoding.
 	"default_encoding": "UTF-8",
-
-	// Tab completion doesn’t make sense for a data format,
-	// and it makes text-aligning harder.
-	"tab_completion": false,
-	"auto_complete": false,
 }

@@ -21,13 +21,6 @@
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 		]
 	}, {
-		// Expand due date from shortcut pattern
-		"keys": ["tab"],
-		"command": "xit_expand_due_date",
-		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "comment.xit.description" },
-		]
-	}, {
 		// Insert new line with item
 		"keys": ["enter"],
 		"command": "run_macro_file",

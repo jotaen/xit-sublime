@@ -3,7 +3,3 @@ from .functions.check import (
 	XitUncheckCommand,
 	XitObsoleteCommand,
 )
-
-from .functions.due import (
-	XitExpandDueDateCommand
-)

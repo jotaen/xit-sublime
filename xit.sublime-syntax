@@ -5,6 +5,11 @@ name: xit
 file_extensions: [xit]
 scope: source.xit
 contexts:
+
+  # Every scope should have a conventional fallback
+  # scope, so that the highlighting also works with
+  # other themes.
+
   main:
   - include: group
 
@@ -15,7 +20,7 @@ contexts:
 
   # ...or with a title (single line)
   - match: '^[^\s].*'
-    scope: constant.language.xit.title
+    scope: constant.language meta.xit.title
     push: item
 
   # Anything else is invalid.
@@ -29,25 +34,25 @@ contexts:
 
   # Open item.
   - match: '\[ \](?= |$)'
-    scope: variable.xit.box.open
+    scope: variable.parameter meta.xit.checkbox.open
     push:
-    - meta_scope: comment.xit.description.open
+    - meta_scope: comment meta.xit.description.open
     - match: ''
       push: priority
 
   # Checked item.
   - match: '\[x\](?= |$)'
-    scope: checkbox.checked.xit
+    scope: variable.function meta.xit.checkbox.checked
     push:
-    - meta_scope: comment.xit.description.checked
+    - meta_scope: comment meta.xit.description.checked
     - match: ''
       push: priority
 
   # Obsolete item.
   - match: '\[~\](?= |$)'
-    scope: checkbox.obsolete.xit
+    scope: comment meta.xit.checkbox.obsolete
     push:
-    - meta_scope: comment.xit.description.obsolete
+    - meta_scope: comment meta.xit.description.obsolete
     - match: ''
       push: priority
 
@@ -61,7 +66,7 @@ contexts:
 
   priority:
   - match: ' !*(?= |$)'
-    scope: keyword.control.xit.priority
+    scope: keyword meta.xit.priority
     push: description
   - match: ''
     push: description
@@ -79,8 +84,8 @@ contexts:
   # Due date can be YYYY, YYYY-MM, YYYY-MM-DD,
   # YYYY-MM-DDThh, YYYY-MM-DDThh:mm, or YYYY-MM-DDThh:mm:ss
   - match: '-> (\d{4}(-\d{2}(-\d{2}?)?)?)(?= |$)'
-    scope: string.quoted.xit.due_date
+    scope: string.quoted meta.xit.due_date
 
   tag:
   - match: '\#[\p{L}\d_]+'
-    scope: source_unstyled.xit.tag
+    scope: meta.xit.tag

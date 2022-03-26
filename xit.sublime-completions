@@ -1,0 +1,21 @@
+{
+    "scope": "source.xit",
+    "completions": [
+        {
+            "trigger": "x",
+            "contents": "[x] ",
+            "annotation": "[x] ",
+            "kind": "snippet"
+        }, {
+            "trigger": "o",
+            "contents": "[ ] ",
+            "annotation": "[ ] ",
+            "kind": "snippet"
+        }, {
+            "trigger": "s",
+            "contents": "[~] ",
+            "annotation": "[~] ",
+            "kind": "snippet"
+        },
+    ]
+}

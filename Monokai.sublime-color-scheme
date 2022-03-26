@@ -31,7 +31,7 @@
 		},
 		{
 			"scope": "meta.xit.priority",
-			"foreground": "#ff3705",
+			"foreground": "#ff0550",
 			"font_style": "bold"
 		},
 		{

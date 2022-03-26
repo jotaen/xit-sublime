@@ -1,5 +1,8 @@
 # https://www.sublimetext.com/docs/api_reference.html
 
+# This file must stay in the root directory, otherwise the
+# completions won’t get automatically reloaded.
+
 import re
 import sublime
 import sublime_plugin
@@ -7,7 +10,7 @@ import datetime
 import calendar
 
 
-SHORTCUT_PATTERN = re.compile('.*-> ((\d+)([dwmy]))$')
+SHORTCUT_PATTERN = re.compile('.*((\d+)([dwmy]))$')
 
 
 def add_months(date, months):
@@ -34,10 +37,10 @@ def expand(count, qualifier):
 def complete(trigger, value, details):
 	return sublime.CompletionItem(
 		trigger,
-		annotation=value,
-		completion=value,
+		annotation='-> '+value,
+		completion='-> '+value,
 		completion_format=sublime.COMPLETION_FORMAT_SNIPPET,
-		kind=(sublime.KIND_ID_AMBIGUOUS, 'a', 'xit'),
+		kind=(sublime.KIND_ID_AMBIGUOUS, '☑', 'xit'),
 		details=details,
 	)
 
@@ -54,11 +57,13 @@ class XitEventListener(sublime_plugin.EventListener):
 		# If the user didn’t provide a pattern, offer some defaults.
 		match = SHORTCUT_PATTERN.search(preceding_text)
 		if not match:
+			fragment = datetime.datetime.now().strftime('%Y-%m-')
 			return sublime.CompletionList([
-				complete('-> 3d', '-> '+expand(3, 'd'), 'Pre-compute due date from pattern'),
-				complete('-> 1w', '-> '+expand(1, 'w'), 'Pre-compute due date from pattern'),
-				complete('-> 2w', '-> '+expand(2, 'w'), 'Pre-compute due date from pattern'),
-				complete('-> 1m', '-> '+expand(1, 'm'), 'Pre-compute due date from pattern'),
+				complete(fragment, fragment, 'Insert date fragment'),
+				complete('3d', expand(3, 'd'), 'Pre-compute due date from pattern'),
+				complete('1w', expand(1, 'w'), 'Pre-compute due date from pattern'),
+				complete('2w', expand(2, 'w'), 'Pre-compute due date from pattern'),
+				complete('1m', expand(1, 'm'), 'Pre-compute due date from pattern'),
 			])
 
 		# Otherwise, expand the pattern.

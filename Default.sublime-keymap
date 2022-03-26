@@ -1,0 +1,42 @@
+[
+	{
+		// Insert new line with item
+		"keys": ["enter"],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/xit/functions/Append Item.sublime-macro"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "meta.xit.description" },
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^(\\[.\\]|    ).+", "match_all": true },
+		]
+	}, {
+		// Clear void item (or blank line)
+		"keys": ["enter"],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/xit/functions/Clear Void Item.sublime-macro"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "meta.xit.description" },
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^(\\[.\\])? *$", "match_all": true },
+		]
+	}, {
+		// Insert subsequent description line
+		"keys": ["shift+enter"],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/xit/functions/Append Description Line.sublime-macro"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "meta.xit.description" },
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^(\\[.\\] |    ).*", "match_all": true },
+		]
+	}, {
+		// Insert open checkbox at beginning of line
+		"keys": ["["],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/xit/functions/Insert Open Checkbox.sublime-macro"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
+		]
+	},
+]

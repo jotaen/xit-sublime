@@ -7,4 +7,12 @@
 
 	// Per specification, use UTF-8 encoding.
 	"default_encoding": "UTF-8",
+
+	// Prevent auto-indenting, since this would otherwise conflict
+	// with custom macros.
+	"auto_indent": false,
+
+	// Make it so that the xit-provided completions always
+	// appear at the top.
+	"auto_complete_preserve_order": "none",
 }

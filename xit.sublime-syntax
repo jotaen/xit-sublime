@@ -73,8 +73,11 @@ contexts:
     scope: invalid
 
   priority:
-  - match: ' [!\.]+(?= |$)'
-    scope: keyword meta.xit.priority
+  - match: ' (!*)(\.*)(!*+)(?= |$)'
+    captures:
+      1: keyword meta.xit.priority.exclamation
+      2: keyword meta.xit.priority.dot
+      3: keyword meta.xit.priority.exclamation
     push: description
   - match: ''
     push: description

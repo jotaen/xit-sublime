@@ -35,9 +35,13 @@
 			"font_style": "bold"
 		},
 		{
-			"scope": "meta.xit.priority",
+			"scope": "meta.xit.priority.exclamation",
 			"foreground": "#ff0550",
 			"font_style": "bold"
+		},
+		{
+			"scope": "meta.xit.priority.dot",
+			"foreground": "#b3073a"
 		},
 		{
 			"scope": "meta.xit.description.open",

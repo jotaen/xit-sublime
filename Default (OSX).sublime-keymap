@@ -1,19 +1,58 @@
 [
 	{
+		// Check off item
 		"keys": ["ctrl+x"],
 		"command": "xit_check",
-		"context": [{ "key": "selector", "operator": "equal", "operand": "source.xit" }]
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
+		]
 	}, {
+		// Uncheck item
 		"keys": ["ctrl+o"],
 		"command": "xit_uncheck",
-		"context": [{ "key": "selector", "operator": "equal", "operand": "source.xit" }]
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
+		]
 	}, {
+		// Make item obsolete
 		"keys": ["ctrl+n"],
 		"command": "xit_obsolete",
-		"context": [{ "key": "selector", "operator": "equal", "operand": "source.xit" }]
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
+		]
 	}, {
+		// Expand due date from shortcut pattern
 		"keys": ["tab"],
 		"command": "xit_expand_due_date",
-		"context": [{ "key": "selector", "operator": "equal", "operand": "source.xit" }]
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "comment.xit.description" },
+		]
+	}, {
+		// Insert new line with item
+		"keys": ["enter"],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/xit/functions/Append Item.sublime-macro"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "comment.xit.description" },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^(\\[.\\]|    ).*", "match_all": true },
+		]
+	}, {
+		// Insert subsequent description line
+		"keys": ["shift+enter"],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/xit/functions/Append Description Line.sublime-macro"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "comment.xit.description" },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^(\\[.\\]|    ).*", "match_all": true },
+		]
+	}, {
+		// Insert open box at beginning of line
+		"keys": ["["],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/xit/functions/Insert Box.sublime-macro"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
+		]
 	},
 ]

@@ -1,0 +1,5 @@
+[
+	{"command": "insert", "args": {"characters": "\n"}},
+	{"command": "move_to", "args": {"to": "hardbol", "extend": false} },
+	{"command": "insert", "args": {"characters": "[ ] "}},
+]

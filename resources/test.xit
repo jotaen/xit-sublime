@@ -3,8 +3,8 @@
 Status
 [ ] Open item
 [x] Checked item
-[~] Obsolete item
 [?] Questioned item
+[~] Struck through item
 
 Description
 [ ] Item descriptions can span multiple
@@ -20,7 +20,7 @@ Tags
 [x] That should also work on...
     ...subsequent #lines.
 [~] And also, if the #style of the item is
-    #different, e.g. because it’s obsolete.
+    #different, e.g. because it’s struck-through.
 
 Due date
 [ ] Do this -> 2018-05-14

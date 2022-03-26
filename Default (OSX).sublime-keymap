@@ -14,9 +14,13 @@
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 		]
 	}, {
-		// Make item obsolete
-		"keys": ["ctrl+n"],
-		"command": "xit_obsolete",
+		// Strike item through
+		"keys": ["ctrl+s"],
+		"command": "xit_strike_through",
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
+		]
+	}, {
 		// Question item
 		"keys": ["ctrl+q"],
 		"command": "xit_question",

@@ -46,7 +46,7 @@ class XitUncheckCommand(sublime_plugin.TextCommand):
 		modify_box(self.view, edit, '[ ]')
 
 
-class XitObsoleteCommand(sublime_plugin.TextCommand):
+class XitStrikeThroughCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		modify_box(self.view, edit, '[~]')
 

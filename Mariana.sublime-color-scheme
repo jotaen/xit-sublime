@@ -30,7 +30,7 @@
 			"font_style": "bold"
 		},
 		{
-			"scope": "meta.xit.checkbox.obsolete",
+			"scope": "meta.xit.checkbox.struck_through",
 			"foreground": "#777777",
 			"font_style": "bold"
 		},
@@ -52,7 +52,7 @@
 			"foreground": "#ababab"
 		},
 		{
-			"scope": "meta.xit.description.obsolete",
+			"scope": "meta.xit.description.struck_through",
 			"foreground": "#666666"
 		},
 		{
@@ -62,7 +62,7 @@
 		{
 			// Use non-existing base scope, so that we don’t
 			// inherit any foreground colour. We don’t know what
-			// description type we are in (checked, obsolete, open).
+			// checkbox type we belong to.
 			"scope": "meta.xit.tag",
 			"font_style": "italic"
 		}

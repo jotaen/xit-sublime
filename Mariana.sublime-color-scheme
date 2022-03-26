@@ -2,71 +2,91 @@
 	// https://www.sublimetext.com/docs/color_schemes.html
 	// https://www.sublimetext.com/docs/scope_naming.html
 
-	"variables": {},
+	"variables": {
+		"title": "#ffffff",
+		"description": "#bfd2d9",
+		"priority": "#ff0550",
+		"tag": "#bad8e3",
+		"due_date": "#d9f0a8",
+	},
 	"globals": {},
 	"rules": [
 		{
 			"scope": "source.xit",
 			"foreground": "#ffffff",
 		},
+
+		// Title
 		{
 			"scope": "meta.xit.title",
-			"foreground": "#ffffff",
+			"foreground": "var(title)",
 			"font_style": "underline"
 		},
+
+		// Checkboxes
 		{
-			"scope": "meta.xit.checkbox.open",
+			"scope": "meta.xit.checkbox meta.xit.status.open",
 			"foreground": "#73daff",
 			"font_style": "bold"
-		},
-		{
-			"scope": "meta.xit.checkbox.questioned",
-			"foreground": "#ffd045",
+		}, {
+			"scope": "meta.xit.checkbox meta.xit.status.questioned",
+			"foreground": "#f5ce58",
 			"font_style": "bold"
-		},
-		{
-			"scope": "meta.xit.checkbox.checked",
+		}, {
+			"scope": "meta.xit.checkbox meta.xit.status.checked",
 			"foreground": "#a9ff6b",
 			"font_style": "bold"
-		},
-		{
-			"scope": "meta.xit.checkbox.struck_through",
+		}, {
+			"scope": "meta.xit.checkbox meta.xit.status.struck_through",
 			"foreground": "#777777",
 			"font_style": "bold"
 		},
+
+		// Priority
 		{
 			"scope": "meta.xit.priority.exclamation",
-			"foreground": "#ff0550",
+			"foreground": "var(priority)",
 			"font_style": "bold"
-		},
-		{
+		}, {
+			"scope": "meta.xit.status.struck_through meta.xit.priority.exclamation",
+			"foreground": "color(var(priority) alpha(0.35))"
+		}, {
 			"scope": "meta.xit.priority.dot",
-			"foreground": "#b3073a"
+			"foreground": "color(var(priority) alpha(0.5))"
 		},
+
+		// Description
 		{
-			"scope": "meta.xit.description.open",
-			"foreground": "#bfd2d9"
+			"scope": "meta.xit.description meta.xit.status.open",
+			"foreground": "color(var(description) alpha(1.0))"
+		}, {
+			"scope": "meta.xit.description meta.xit.status.questioned",
+			"foreground": "color(var(description) alpha(0.85))"
+		}, {
+			"scope": "meta.xit.description meta.xit.status.checked",
+			"foreground": "color(var(description) alpha(0.85))"
+		}, {
+			"scope": "meta.xit.description meta.xit.status.struck_through",
+			"foreground": "color(var(description) alpha(0.25))"
 		},
-		{
-			"scope": "meta.xit.description.questioned",
-			"foreground": "#ababab"
-		},
-		{
-			"scope": "meta.xit.description.checked",
-			"foreground": "#ababab"
-		},
-		{
-			"scope": "meta.xit.description.struck_through",
-			"foreground": "#666666"
-		},
+
+		// Due date
 		{
 			"scope": "meta.xit.due_date",
-			"foreground": "#f0e7a8"
+			"foreground": "color(var(due_date) alpha(1.0))"
+		}, {
+			"scope": "meta.xit.status.checked meta.xit.due_date",
+			"foreground": "color(var(due_date) alpha(0.75))"
+		}, {
+			"scope": "meta.xit.status.questioned meta.xit.due_date",
+			"foreground": "color(var(due_date) alpha(0.75))"
+		}, {
+			"scope": "meta.xit.status.struck_through meta.xit.due_date",
+			"foreground": "color(var(due_date) alpha(0.35))"
 		},
+
+		// Tag
 		{
-			// Use non-existing base scope, so that we don’t
-			// inherit any foreground colour. We don’t know what
-			// checkbox type we belong to.
 			"scope": "meta.xit.tag",
 			"font_style": "italic"
 		}

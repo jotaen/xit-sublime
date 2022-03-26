@@ -35,7 +35,7 @@ Due date
 
 Priority
 [ ] ! This is important
-[x] !!! This is very important
+[ ] !!! This is very important
 [x] !!!!!!!! Priority level can be arbitrary
 [x] !.. Dots can be filled in for visual alignment
 [x] ... It can also be all dots
@@ -44,10 +44,10 @@ Priority
 [~] .
 
 Lexicographic sorting
-[ ] !! -> 2005-05-02 All items within this group are sorted...
+[ ] !! -> 2016-05-02 All items within this group are sorted...
 [ ] .! -> 2009-01-01 ...lexicographically. This implies the
 [ ] .! -> 2012-07-28 following hierarchy: open items first, then
-[ ] .. -> 2001-12-31 questioned, then done, lastly struck through.
+[ ] .! -> 2017-12-31 questioned, then done, lastly struck through.
 [?] .. -> 2015-08-14 Within those kinds, the high-priority ones
 [x] !! -> 2000-02-06 come first. Within the priority levels, it’s
-[~] .. -> 1970-11-11 sorted by due date, starting with the nearest.
+[~] !! -> 1970-11-11 sorted by due date, starting with the nearest.

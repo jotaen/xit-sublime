@@ -34,33 +34,33 @@ contexts:
 
   # Open item.
   - match: '\[ \](?= |$)'
-    scope: variable.parameter meta.xit.checkbox.open
+    scope: variable.parameter meta.xit.checkbox meta.xit.status.open
     push:
-    - meta_scope: comment meta.xit.description.open
+    - meta_scope: comment meta.xit.description meta.xit.status.open
     - match: ''
       push: priority
 
   # Checked item.
   - match: '\[x\](?= |$)'
-    scope: variable.function meta.xit.checkbox.checked
+    scope: variable.function meta.xit.checkbox meta.xit.status.checked
     push:
-    - meta_scope: comment meta.xit.description.checked
+    - meta_scope: comment meta.xit.description meta.xit.status.checked
     - match: ''
       push: priority
 
   # Struck-through item.
   - match: '\[~\](?= |$)'
-    scope: comment meta.xit.checkbox.struck_through
+    scope: comment meta.xit.checkbox meta.xit.status.struck_through
     push:
-    - meta_scope: comment meta.xit.description.struck_through
+    - meta_scope: comment meta.xit.description meta.xit.status.struck_through
     - match: ''
       push: priority
 
   # Questioned item.
   - match: '\[\?\](?= |$)'
-    scope: comment meta.xit.checkbox.questioned
+    scope: comment meta.xit.checkbox meta.xit.status.questioned
     push:
-    - meta_scope: comment meta.xit.description.questioned
+    - meta_scope: comment meta.xit.description meta.xit.status.questioned
     - match: ''
       push: priority
 

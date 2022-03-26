@@ -1,0 +1,61 @@
+{
+	// https://www.sublimetext.com/docs/color_schemes.html
+	// https://www.sublimetext.com/docs/scope_naming.html
+
+	"variables": {},
+	"globals": {},
+	"rules": [
+		{
+			"scope": "source.xit",
+			"foreground": "#ffffff",
+		},
+		{
+			"scope": "meta.xit.title",
+			"foreground": "#ffffff",
+			"font_style": "underline"
+		},
+		{
+			"scope": "meta.xit.checkbox.open",
+			"foreground": "#73daff",
+			"font_style": "bold"
+		},
+		{
+			"scope": "meta.xit.checkbox.checked",
+			"foreground": "#a9ff6b",
+			"font_style": "bold"
+		},
+		{
+			"scope": "meta.xit.checkbox.obsolete",
+			"foreground": "#777777",
+			"font_style": "bold"
+		},
+		{
+			"scope": "meta.xit.priority",
+			"foreground": "#ff3705",
+			"font_style": "bold"
+		},
+		{
+			"scope": "meta.xit.description.open",
+			"foreground": "#bfd2d9"
+		},
+		{
+			"scope": "meta.xit.description.checked",
+			"foreground": "#ababab"
+		},
+		{
+			"scope": "meta.xit.description.obsolete",
+			"foreground": "#666666"
+		},
+		{
+			"scope": "meta.xit.due_date",
+			"foreground": "#f0e7a8"
+		},
+		{
+			// Use non-existing base scope, so that we don’t
+			// inherit any foreground colour. We don’t know what
+			// description type we are in (checked, obsolete, open).
+			"scope": "meta.xit.tag",
+			"font_style": "italic"
+		}
+	]
+}

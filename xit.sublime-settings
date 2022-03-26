@@ -1,8 +1,4 @@
 {
-	// Enforce Monokai scheme. Colors have special meaning
-	// we cannot use the general-purpose colors.
-	"color_scheme": "Monokai.sublime-color-scheme",
-
 	// Per specification, enforce indentation to be 4 spaces.
 	"smart_indent": false,
 	"detect_indentation": false,

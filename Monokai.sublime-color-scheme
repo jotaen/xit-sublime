@@ -45,7 +45,7 @@
 		},
 		{
 			"scope": "meta.xit.description.questioned",
-			"foreground": "#bfd2d9"
+			"foreground": "#ababab"
 		},
 		{
 			"scope": "meta.xit.description.checked",

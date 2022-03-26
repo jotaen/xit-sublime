@@ -16,6 +16,11 @@
             "contents": "[~] ",
             "annotation": "[~] ",
             "kind": "snippet"
+        }, {
+            "trigger": "q",
+            "contents": "[?] ",
+            "annotation": "[?] ",
+            "kind": "snippet"
         },
     ]
 }

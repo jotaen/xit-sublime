@@ -5,7 +5,7 @@ import sublime
 import sublime_plugin
 
 
-BOX_PATTERN = re.compile('\[[ x~]\]')
+BOX_PATTERN = re.compile('\[[ x~?]\]')
 INDENT_SEQUENCE = '    '
 
 
@@ -49,3 +49,8 @@ class XitUncheckCommand(sublime_plugin.TextCommand):
 class XitObsoleteCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		modify_box(self.view, edit, '[~]')
+
+
+class XitQuestionCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		modify_box(self.view, edit, '[?]')

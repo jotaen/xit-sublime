@@ -20,6 +20,11 @@
 			"font_style": "bold"
 		},
 		{
+			"scope": "meta.xit.checkbox.questioned",
+			"foreground": "#ffd045",
+			"font_style": "bold"
+		},
+		{
 			"scope": "meta.xit.checkbox.checked",
 			"foreground": "#a9ff6b",
 			"font_style": "bold"
@@ -36,6 +41,10 @@
 		},
 		{
 			"scope": "meta.xit.description.open",
+			"foreground": "#bfd2d9"
+		},
+		{
+			"scope": "meta.xit.description.questioned",
 			"foreground": "#bfd2d9"
 		},
 		{

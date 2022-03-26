@@ -17,6 +17,9 @@
 		// Make item obsolete
 		"keys": ["ctrl+n"],
 		"command": "xit_obsolete",
+		// Question item
+		"keys": ["ctrl+q"],
+		"command": "xit_question",
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 		]

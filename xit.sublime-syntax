@@ -53,6 +53,12 @@ contexts:
     scope: comment meta.xit.checkbox.obsolete
     push:
     - meta_scope: comment meta.xit.description.obsolete
+
+  # Questioned item.
+  - match: '\[\?\](?= |$)'
+    scope: comment meta.xit.checkbox.questioned
+    push:
+    - meta_scope: comment meta.xit.description.questioned
     - match: ''
       push: priority
 

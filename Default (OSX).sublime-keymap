@@ -1,19 +1,19 @@
 [
 	{
 		"keys": ["ctrl+x"],
-		"command": "check",
+		"command": "xit_check",
 		"context": [{ "key": "selector", "operator": "equal", "operand": "source.xit" }]
 	}, {
 		"keys": ["ctrl+o"],
-		"command": "uncheck",
+		"command": "xit_uncheck",
 		"context": [{ "key": "selector", "operator": "equal", "operand": "source.xit" }]
 	}, {
 		"keys": ["ctrl+n"],
-		"command": "obsolete",
+		"command": "xit_obsolete",
 		"context": [{ "key": "selector", "operator": "equal", "operand": "source.xit" }]
 	}, {
 		"keys": ["tab"],
-		"command": "expand_due_date",
+		"command": "xit_expand_due_date",
 		"context": [{ "key": "selector", "operator": "equal", "operand": "source.xit" }]
 	},
 ]

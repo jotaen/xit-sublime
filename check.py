@@ -36,16 +36,16 @@ def modify_box(view, edit, replacement):
 				view.replace(edit, box_candidate, replacement)
 
 
-class CheckCommand(sublime_plugin.TextCommand):
+class XitCheckCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		modify_box(self.view, edit, '[x]')
 
 
-class UncheckCommand(sublime_plugin.TextCommand):
+class XitUncheckCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		modify_box(self.view, edit, '[ ]')
 
 
-class ObsoleteCommand(sublime_plugin.TextCommand):
+class XitObsoleteCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		modify_box(self.view, edit, '[~]')

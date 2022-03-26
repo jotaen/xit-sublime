@@ -31,7 +31,7 @@ def expand(count, qualifier):
 	return result.strftime('%Y-%m-%d')
 
 
-class ExpandDueDateCommand(sublime_plugin.TextCommand):
+class XitExpandDueDateCommand(sublime_plugin.TextCommand):
 	def is_enabled(self):
 		cursor = self.view.sel()[0]
 		line = self.view.line(cursor)

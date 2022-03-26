@@ -15,7 +15,7 @@ contexts:
 
   # ...or with a title (single line)
   - match: '^[^\s].*'
-    scope: title.xit
+    scope: constant.language.xit.title
     push: item
 
   # Anything else is invalid.
@@ -29,9 +29,9 @@ contexts:
 
   # Open item.
   - match: '\[ \](?= |$)'
-    scope: checkbox.open.xit
+    scope: variable.xit.box.open
     push:
-    - meta_scope: description.open.xit
+    - meta_scope: comment.xit.description.open
     - match: ''
       push: priority
 
@@ -39,7 +39,7 @@ contexts:
   - match: '\[x\](?= |$)'
     scope: checkbox.checked.xit
     push:
-    - meta_scope: description.checked.xit
+    - meta_scope: comment.xit.description.checked
     - match: ''
       push: priority
 
@@ -47,7 +47,7 @@ contexts:
   - match: '\[~\](?= |$)'
     scope: checkbox.obsolete.xit
     push:
-    - meta_scope: description.obsolete.xit
+    - meta_scope: comment.xit.description.obsolete
     - match: ''
       push: priority
 
@@ -61,7 +61,7 @@ contexts:
 
   priority:
   - match: ' !*(?= |$)'
-    scope: priority.xit
+    scope: keyword.control.xit.priority
     push: description
   - match: ''
     push: description
@@ -79,8 +79,8 @@ contexts:
   # Due date can be YYYY, YYYY-MM, YYYY-MM-DD,
   # YYYY-MM-DDThh, YYYY-MM-DDThh:mm, or YYYY-MM-DDThh:mm:ss
   - match: '-> (\d{4}(-\d{2}(-\d{2}?)?)?)(?= |$)'
-    scope: due_date.xit
+    scope: string.quoted.xit.due_date
 
   tag:
   - match: '\#[\p{L}\d_]+'
-    scope: tag.xit
+    scope: source_unstyled.xit.tag

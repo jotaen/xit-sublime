@@ -1,4 +1,12 @@
 {
+	// https://www.sublimetext.com/docs/color_schemes.html
+	// https://www.sublimetext.com/docs/scope_naming.html
+
+	// The naming pattern of the scopes is this:
+	// [conventional_scheme].klog.[klog_scheme]
+	// The first part serves as a fallback, so that there
+	// is at least *some* colouring.
+
 	"variables": {},
 	"globals": {},
 	"rules": [
@@ -7,11 +15,12 @@
 			"foreground": "#ffffff",
 		},
 		{
-			"scope": "title.xit",
+			"scope": "constant.language.xit.title",
+			"foreground": "#ffffff",
 			"font_style": "underline"
 		},
 		{
-			"scope": "checkbox.open.xit",
+			"scope": "variable.xit.box.open",
 			"foreground": "#73daff",
 			"font_style": "bold"
 		},
@@ -26,28 +35,31 @@
 			"font_style": "bold"
 		},
 		{
-			"scope": "priority.xit",
+			"scope": "keyword.control.xit.priority",
 			"foreground": "#ff3705",
 			"font_style": "bold"
 		},
 		{
-			"scope": "description.open.xit",
+			"scope": "comment.xit.description.open",
 			"foreground": "#bfd2d9"
 		},
 		{
-			"scope": "description.checked.xit",
+			"scope": "comment.xit.description.checked",
 			"foreground": "#ababab"
 		},
 		{
-			"scope": "description.obsolete.xit",
+			"scope": "comment.xit.description.obsolete",
 			"foreground": "#666666"
 		},
 		{
-			"scope": "due_date.xit",
+			"scope": "string.quoted.xit.due_date",
 			"foreground": "#ca9eff"
 		},
 		{
-			"scope": "tag.xit",
+			// Use non-existing base scope, so that we don’t
+			// inherit any foreground colour. We don’t know what
+			// description type we are in (checked, obsolete, open).
+			"scope": "source_unstyled.xit.tag",
 			"font_style": "italic"
 		}
 	]

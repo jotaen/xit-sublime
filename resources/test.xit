@@ -36,8 +36,17 @@ Priority
 [ ] ! This is important
 [x] !!! This is very important
 [x] !!!!!!!! Priority level can be arbitrary
+[x] !!. Dots can be filled in for visual alignment
+[x] ... It can also be all dots
+[x] .!. Or freely mixed, depending on preference
 [~] !
+[~] .
 
-All together
-[ ] !! I need to do #this -> 2020-03-04
-[ ] !!!! -> 2020-03-04 I need to do #this
+Lexicographic sorting
+[ ] !!! -> 2005-05-02 All items within this group are sorted...
+[ ] ..! -> 2009-01-01 ...lexicographically. This implies the
+[ ] ..! -> 2012-07-28 following hierarchy: open items first, then
+[ ] ... -> 2001-12-31 questioned, then done, lastly struck through.
+[?] ... -> 2015-08-14 Within those kinds, the high-priority ones
+[x] !!! -> 2000-02-06 come first. Within the priority levels, it’s
+[~] ... -> 1970-11-11 sorted by due date, starting with the nearest.

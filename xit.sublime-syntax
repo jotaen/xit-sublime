@@ -73,7 +73,7 @@ contexts:
     scope: invalid
 
   priority:
-  - match: ' !*(?= |$)'
+  - match: ' [!\.]+(?= |$)'
     scope: keyword meta.xit.priority
     push: description
   - match: ''

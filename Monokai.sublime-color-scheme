@@ -51,23 +51,23 @@
 			"scope": "meta.xit.status.struck_through meta.xit.priority.exclamation",
 			"foreground": "color(var(priority) alpha(0.35))"
 		}, {
+			"scope": "meta.xit.status.checked meta.xit.priority.exclamation",
+			"foreground": "color(var(priority) alpha(0.35))"
+		}, {
 			"scope": "meta.xit.priority.dot",
 			"foreground": "color(var(priority) alpha(0.5))"
 		},
 
 		// Description
 		{
-			"scope": "meta.xit.description meta.xit.status.open",
+			"scope": "meta.xit.description",
 			"foreground": "color(var(description) alpha(1.0))"
 		}, {
-			"scope": "meta.xit.description meta.xit.status.questioned",
-			"foreground": "color(var(description) alpha(0.85))"
-		}, {
 			"scope": "meta.xit.description meta.xit.status.checked",
-			"foreground": "color(var(description) alpha(0.85))"
+			"foreground": "color(var(description) alpha(0.5))"
 		}, {
 			"scope": "meta.xit.description meta.xit.status.struck_through",
-			"foreground": "color(var(description) alpha(0.25))"
+			"foreground": "color(var(description) alpha(0.5))"
 		},
 
 		// Due date
@@ -76,13 +76,13 @@
 			"foreground": "color(var(due_date) alpha(1.0))"
 		}, {
 			"scope": "meta.xit.status.checked meta.xit.due_date",
-			"foreground": "color(var(due_date) alpha(0.75))"
+			"foreground": "color(var(due_date) alpha(0.5))"
 		}, {
 			"scope": "meta.xit.status.questioned meta.xit.due_date",
-			"foreground": "color(var(due_date) alpha(0.75))"
+			"foreground": "color(var(due_date) alpha(1.0))"
 		}, {
 			"scope": "meta.xit.status.struck_through meta.xit.due_date",
-			"foreground": "color(var(due_date) alpha(0.35))"
+			"foreground": "color(var(due_date) alpha(0.5))"
 		},
 
 		// Tag

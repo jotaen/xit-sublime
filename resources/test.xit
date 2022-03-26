@@ -17,11 +17,11 @@ Description
 
 Tags
 [ ] Item with #tag in the #text, for #categorising.
+[?] #nodescription
 [x] That should also work on...
     ...subsequent #lines.
 [~] And also, if the #style of the item is
     #different, e.g. because it’s struck-through.
-[?] #nothing
 
 Due date
 [ ] Do this -> 2018-05-14
@@ -36,11 +36,11 @@ Due date
 Priority
 [ ] ! This is important
 [ ] !!! This is very important
-[x] !!!!!!!! Priority level can be arbitrary
-[x] !.. Dots can be filled in for visual alignment
+[ ] !!!!!!!! Priority level can be arbitrary
+[ ] !.. Dots can be filled in for visual alignment
 [x] ... It can also be all dots
 [x] ..! The exclamation can be at the end
-[~] !
+[?] !
 [~] .
 
 Lexicographic sorting

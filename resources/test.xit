@@ -4,7 +4,7 @@ Status
 [ ] Open item
 [x] Checked item
 [?] Questioned item
-[~] Struck through item
+[~] Obsolete item
 
 Description
 [ ] Item descriptions can span multiple
@@ -21,7 +21,7 @@ Tags
 [x] That should also work on...
     ...subsequent #lines.
 [~] And also, if the #style of the item is
-    #different, e.g. because it’s struck-through.
+    #different, e.g. because it’s obsolete.
 
 Due date
 [ ] Do this -> 2018-05-14
@@ -47,7 +47,7 @@ Lexicographic sorting
 [ ] !! -> 2016-05-02 All items within this group are sorted...
 [ ] .! -> 2009-01-01 ...lexicographically. This implies the
 [ ] .! -> 2012-07-28 following hierarchy: open items first, then
-[ ] .! -> 2017-12-31 questioned, then done, lastly struck through.
+[ ] .! -> 2017-12-31 questioned, then done, lastly obsolete ones.
 [?] .. -> 2015-08-14 Within those kinds, the high-priority ones
 [x] !! -> 2000-02-06 come first. Within the priority levels, it’s
 [~] !! -> 1970-11-11 sorted by due date, starting with the nearest.

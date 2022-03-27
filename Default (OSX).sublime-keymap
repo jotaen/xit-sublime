@@ -1,28 +1,28 @@
 [
 	{
 		// Check off item
-		"keys": ["ctrl+x"],
+		"keys": ["ctrl+shift+x"],
 		"command": "xit_check",
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 		]
 	}, {
 		// Uncheck item
-		"keys": ["ctrl+o"],
+		"keys": ["ctrl+shift+o"],
 		"command": "xit_uncheck",
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 		]
 	}, {
-		// Strike item through
-		"keys": ["ctrl+s"],
-		"command": "xit_strike_through",
+		// Obsolete item
+		"keys": ["ctrl+shift+`"],
+		"command": "xit_obsolete",
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 		]
 	}, {
 		// Question item
-		"keys": ["ctrl+q"],
+		"keys": ["ctrl+shift+/"],
 		"command": "xit_question",
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },

@@ -48,11 +48,11 @@ contexts:
     - match: ''
       push: priority
 
-  # Struck-through item.
+  # Obsolete item.
   - match: '\[~\](?= |$)'
-    scope: comment meta.xit.checkbox meta.xit.status.struck_through
+    scope: comment meta.xit.checkbox meta.xit.status.obsolete
     push:
-    - meta_scope: comment meta.xit.description meta.xit.status.struck_through
+    - meta_scope: comment meta.xit.description meta.xit.status.obsolete
     - match: ''
       push: priority
 

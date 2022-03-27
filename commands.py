@@ -1,6 +1,6 @@
 from .functions.check import (
 	XitCheckCommand,
 	XitUncheckCommand,
-	XitStrikeThroughCommand,
+	XitObsoleteCommand,
 	XitQuestionCommand,
 )

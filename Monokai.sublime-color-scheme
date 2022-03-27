@@ -37,7 +37,7 @@
 			"foreground": "#a9ff6b",
 			"font_style": "bold"
 		}, {
-			"scope": "meta.xit.checkbox meta.xit.status.struck_through",
+			"scope": "meta.xit.checkbox meta.xit.status.obsolete",
 			"foreground": "#777777",
 			"font_style": "bold"
 		},
@@ -48,7 +48,7 @@
 			"foreground": "var(priority)",
 			"font_style": "bold"
 		}, {
-			"scope": "meta.xit.status.struck_through meta.xit.priority.exclamation",
+			"scope": "meta.xit.status.obsolete meta.xit.priority.exclamation",
 			"foreground": "color(var(priority) alpha(0.35))"
 		}, {
 			"scope": "meta.xit.status.checked meta.xit.priority.exclamation",
@@ -66,7 +66,7 @@
 			"scope": "meta.xit.description meta.xit.status.checked",
 			"foreground": "color(var(description) alpha(0.5))"
 		}, {
-			"scope": "meta.xit.description meta.xit.status.struck_through",
+			"scope": "meta.xit.description meta.xit.status.obsolete",
 			"foreground": "color(var(description) alpha(0.5))"
 		},
 
@@ -81,7 +81,7 @@
 			"scope": "meta.xit.status.questioned meta.xit.due_date",
 			"foreground": "color(var(due_date) alpha(1.0))"
 		}, {
-			"scope": "meta.xit.status.struck_through meta.xit.due_date",
+			"scope": "meta.xit.status.obsolete meta.xit.due_date",
 			"foreground": "color(var(due_date) alpha(0.5))"
 		},
 

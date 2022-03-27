@@ -98,5 +98,7 @@ contexts:
     scope: string.quoted meta.xit.due_date
 
   tag:
-  - match: '\#[\p{L}\d_]+'
-    scope: meta.xit.tag
+  - match: (\#[\p{L}\d_-]+)(=((\'.*\')|(".*")|([\p{L}\d_-]+)))?
+    captures:
+      1: meta.xit.tag.name
+      2: meta.xit.tag.value

@@ -88,6 +88,9 @@
 		// Tag
 		{
 			"scope": "meta.xit.tag",
+			"font_style": "bold italic"
+		}, {
+			"scope": "meta.xit.tag.value",
 			"font_style": "italic"
 		}
 	]

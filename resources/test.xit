@@ -20,8 +20,8 @@ Tags
 [?] #nodescription
 [x] That should also work on...
     ...subsequent #lines.
-[~] And also, if the #style of the item is
-    #different, e.g. because it’s obsolete.
+[~] Tags can #have=values, which can also
+    #be="quoted" (#example='.! #foo').
 
 Due date
 [ ] Do this -> 2018-05-14

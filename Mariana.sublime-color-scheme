@@ -30,7 +30,7 @@
 			"font_style": "bold"
 		}, {
 			"scope": "meta.xit.checkbox meta.xit.status.ongoing",
-			"foreground": "#f5ce58",
+			"foreground": "#f199ff",
 			"font_style": "bold"
 		}, {
 			"scope": "meta.xit.checkbox meta.xit.status.checked",

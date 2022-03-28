@@ -56,11 +56,11 @@ contexts:
     - match: ''
       push: priority
 
-  # Item in doing.
+  # Ongoing item.
   - match: '\[\@\](?= |$)'
-    scope: comment meta.xit.checkbox meta.xit.status.doing
+    scope: comment meta.xit.checkbox meta.xit.status.ongoing
     push:
-    - meta_scope: comment meta.xit.description meta.xit.status.doing
+    - meta_scope: comment meta.xit.description meta.xit.status.ongoing
     - match: ''
       push: priority
 

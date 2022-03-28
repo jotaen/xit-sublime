@@ -21,9 +21,9 @@
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 		]
 	}, {
-		// Doing item
+		// Ongoing item
 		"keys": ["ctrl+shift+/"],
-		"command": "xit_doing",
+		"command": "xit_ongoing",
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 		]

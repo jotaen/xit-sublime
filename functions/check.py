@@ -5,7 +5,7 @@ import sublime
 import sublime_plugin
 
 
-BOX_PATTERN = re.compile('\[[ x~?]\]')
+BOX_PATTERN = re.compile('\[[ x~@]\]')
 INDENT_SEQUENCE = '    '
 
 
@@ -51,6 +51,6 @@ class XitObsoleteCommand(sublime_plugin.TextCommand):
 		modify_box(self.view, edit, '[~]')
 
 
-class XitQuestionCommand(sublime_plugin.TextCommand):
+class XitDoingCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
-		modify_box(self.view, edit, '[?]')
+		modify_box(self.view, edit, '[@]')

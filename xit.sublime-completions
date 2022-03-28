@@ -17,9 +17,9 @@
             "annotation": "[~] ",
             "kind": "snippet"
         }, {
-            "trigger": "q",
-            "contents": "[?] ",
-            "annotation": "[?] ",
+            "trigger": "a",
+            "contents": "[@] ",
+            "annotation": "[@] ",
             "kind": "snippet"
         },
     ]

@@ -29,7 +29,7 @@
 			"foreground": "#73daff",
 			"font_style": "bold"
 		}, {
-			"scope": "meta.xit.checkbox meta.xit.status.questioned",
+			"scope": "meta.xit.checkbox meta.xit.status.doing",
 			"foreground": "#f5ce58",
 			"font_style": "bold"
 		}, {
@@ -78,7 +78,7 @@
 			"scope": "meta.xit.status.checked meta.xit.due_date",
 			"foreground": "color(var(due_date) alpha(0.5))"
 		}, {
-			"scope": "meta.xit.status.questioned meta.xit.due_date",
+			"scope": "meta.xit.status.doing meta.xit.due_date",
 			"foreground": "color(var(due_date) alpha(1.0))"
 		}, {
 			"scope": "meta.xit.status.obsolete meta.xit.due_date",

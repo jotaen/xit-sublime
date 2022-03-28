@@ -25,19 +25,19 @@
 
 		// Checkboxes
 		{
-			"scope": "meta.xit.checkbox meta.xit.status.open",
+			"scope": "meta.xit.status.open meta.xit.checkbox",
 			"foreground": "#73daff",
 			"font_style": "bold"
 		}, {
-			"scope": "meta.xit.checkbox meta.xit.status.ongoing",
+			"scope": "meta.xit.status.ongoing meta.xit.checkbox",
 			"foreground": "#f199ff",
 			"font_style": "bold"
 		}, {
-			"scope": "meta.xit.checkbox meta.xit.status.checked",
+			"scope": "meta.xit.status.checked meta.xit.checkbox",
 			"foreground": "#a9ff6b",
 			"font_style": "bold"
 		}, {
-			"scope": "meta.xit.checkbox meta.xit.status.obsolete",
+			"scope": "meta.xit.status.obsolete meta.xit.checkbox",
 			"foreground": "#777777",
 			"font_style": "bold"
 		},
@@ -63,10 +63,10 @@
 			"scope": "meta.xit.description",
 			"foreground": "color(var(description) alpha(1.0))"
 		}, {
-			"scope": "meta.xit.description meta.xit.status.checked",
+			"scope": "meta.xit.status.checked meta.xit.description",
 			"foreground": "color(var(description) alpha(0.5))"
 		}, {
-			"scope": "meta.xit.description meta.xit.status.obsolete",
+			"scope": "meta.xit.status.obsolete meta.xit.description",
 			"foreground": "color(var(description) alpha(0.5))"
 		},
 

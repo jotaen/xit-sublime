@@ -13,91 +13,65 @@ contexts:
   main:
   - include: group
 
+  exit_on_blankline:
+  - match: '^\s*$'
+    pop: 99999
+
   group:
   # A group can either start with an item...
   - match: '^(?=\[)'
-    push: item
+    push: items
 
   # ...or with a title (single line)
   - match: '^[^\s].*'
     scope: constant.language meta.xit.title
-    push: item
+    push: items
 
   # Anything else is invalid.
   - match: '^.*'
     scope: invalid
 
+  items:
+  - include: exit_on_blankline
+
+  - match: '^(?=(    )?\[ \])'
+    push:
+    - meta_scope: meta.xit.status.open
+    - include: item
+  - match: '^(?=(    )?\[x\])'
+    push:
+    - meta_scope: meta.xit.status.checked
+    - include: item
+  - match: '^(?=(    )?\[@\])'
+    push:
+    - meta_scope: meta.xit.status.ongoing
+    - include: item
+  - match: '^(?=(    )?\[~\])'
+    push:
+    - meta_scope: meta.xit.status.obsolete
+    - include: item
+
   item:
-  # Exit on blank line.
-  - match: '^\s*$'
-    pop: 99999
+  - include: exit_on_blankline
 
-  # Open item.
-  - match: '\[ \](?= |$)'
-    scope: variable.parameter meta.xit.checkbox meta.xit.status.open
+  - match: '^(    )?\[.\]'
+    scope: variable.parameter meta.xit.checkbox
     push:
-    - meta_scope: comment meta.xit.description meta.xit.status.open
-    - match: ''
-      push: priority
-
-  # Checked item.
-  - match: '\[x\](?= |$)'
-    scope: variable.function meta.xit.checkbox meta.xit.status.checked
-    push:
-    - meta_scope: comment meta.xit.description meta.xit.status.checked
-    - match: ''
-      push: priority
-
-  # Obsolete item.
-  - match: '\[~\](?= |$)'
-    scope: comment meta.xit.checkbox meta.xit.status.obsolete
-    push:
-    - meta_scope: comment meta.xit.description meta.xit.status.obsolete
-    - match: ''
-      push: priority
-
-  # Ongoing item.
-  - match: '\[\@\](?= |$)'
-    scope: comment meta.xit.checkbox meta.xit.status.ongoing
-    push:
-    - meta_scope: comment meta.xit.description meta.xit.status.ongoing
-    - match: ''
-      push: priority
-
-  # Intermediate item (write-in-progress).
-  # Shall match: `[`, `[ `, `[]`
-  - match: '\[[ x~\]]?$'
-
-  # Something invalid.
-  - match: '^.*'
-    scope: invalid
-
-  priority:
-  - match: ' (!*)(\.*)(!*+)(?= |$)'
-    captures:
-      1: keyword meta.xit.priority.exclamation
-      2: keyword meta.xit.priority.dot
-      3: keyword meta.xit.priority.exclamation
-    push: description
-  - match: ''
-    push: description
+    - meta_scope: comment meta.xit.description
+    - match: '^(?!    )'
+      pop: 2
+    - include: description
+    - match: ' (!*)(\.*)(!*+)(?= |$)'
+      captures:
+        1: keyword meta.xit.priority.exclamation
+        2: keyword meta.xit.priority.dot
+        3: keyword meta.xit.priority.exclamation
 
   description:
-  - include: due_date
-  - include: tag
-
-  # Keep matching, until it’s not a continuation
-  # of the description anymore.
-  - match: '^(?!    )'
-    pop: 3
-
-  due_date:
   # Due date can be YYYY, YYYY-MM, YYYY-MM-DD,
   # YYYY-MM-DDThh, YYYY-MM-DDThh:mm, or YYYY-MM-DDThh:mm:ss
   - match: '-> (\d{4}(([-/]\d{2}([-/]\d{2}?)?)|([-/]W\d{2}))?)(?= |$)'
     scope: string.quoted meta.xit.due_date
-
-  tag:
   - match: (\#[\p{L}\d_-]+)(=((\'.*\')|(".*")|([\p{L}\d_-]+)))?
     captures:
       1: meta.xit.tag.name

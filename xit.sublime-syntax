@@ -94,7 +94,7 @@ contexts:
   due_date:
   # Due date can be YYYY, YYYY-MM, YYYY-MM-DD,
   # YYYY-MM-DDThh, YYYY-MM-DDThh:mm, or YYYY-MM-DDThh:mm:ss
-  - match: '-> (\d{4}(-\d{2}(-\d{2}?)?)?)(?= |$)'
+  - match: '-> (\d{4}(([-/]\d{2}([-/]\d{2}?)?)|([-/]W\d{2}))?)(?= |$)'
     scope: string.quoted meta.xit.due_date
 
   tag:

@@ -27,10 +27,12 @@ Due date
 [ ] Do this -> 2018-05-14
 [ ] Or with month only -> 2022-03
 [ ] Or with year only -> 2022
+[ ] Or with week -> 2022-W22
 [ ] -> 2022-03-14 Due date can also be at beginning
 [ ] Or in -> 2022-03-14 between
 [x] Or in the...
     ...next line: -> 2022-03
+[ ] Hyphens can also be slashes -> 2018/05/14
 [~] -> 2022-03-14
 
 Priority

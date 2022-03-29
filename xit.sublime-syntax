@@ -34,45 +34,53 @@ contexts:
   items:
   - include: exit_on_blankline
 
-  - match: '^(?=(    )?\[ \])'
+  # Match checkboxes and set meta scopes.
+  - match: '^(?=\[ \])'
     push:
     - meta_scope: meta.xit.status.open
     - include: item
-  - match: '^(?=(    )?\[x\])'
+  - match: '^(?=\[x\])'
     push:
     - meta_scope: meta.xit.status.checked
     - include: item
-  - match: '^(?=(    )?\[@\])'
+  - match: '^(?=\[@\])'
     push:
     - meta_scope: meta.xit.status.ongoing
     - include: item
-  - match: '^(?=(    )?\[~\])'
+  - match: '^(?=\[~\])'
     push:
     - meta_scope: meta.xit.status.obsolete
     - include: item
 
+  - match: '.*'
+    scope: invalid
+
   item:
   - include: exit_on_blankline
 
-  - match: '^(    )?\[.\]'
+  - match: '^\[.\](?= |$)'
     scope: variable.parameter meta.xit.checkbox
     push:
-    - meta_scope: comment meta.xit.description
-    - match: '^(?!    )'
-      pop: 2
-    - include: description
-    - match: ' (!*)(\.*)(!*+)(?= |$)'
-      captures:
-        1: keyword meta.xit.priority.exclamation
-        2: keyword meta.xit.priority.dot
-        3: keyword meta.xit.priority.exclamation
-
-  description:
-  # Due date can be YYYY, YYYY-MM, YYYY-MM-DD,
-  # YYYY-MM-DDThh, YYYY-MM-DDThh:mm, or YYYY-MM-DDThh:mm:ss
-  - match: '-> (\d{4}(([-/]\d{2}([-/]\d{2}?)?)|([-/]W\d{2}))?)(?= |$)'
-    scope: string.quoted meta.xit.due_date
-  - match: (\#[\p{L}\d_-]+)(=((\'.*\')|(".*")|([\p{L}\d_-]+)))?
-    captures:
-      1: meta.xit.tag.name
-      2: meta.xit.tag.value
+    - include: exit_on_blankline
+    - match: ' '
+      push:
+      - match: '((!*)(\.*)|(\.*)(!*))(?= |$)'
+        captures:
+          2: keyword meta.xit.priority.exclamation
+          3: keyword meta.xit.priority.dot
+          4: keyword meta.xit.priority.dot
+          5: keyword meta.xit.priority.exclamation
+      - match: ''
+        push:
+        - include: exit_on_blankline
+        - meta_scope: comment meta.xit.description
+        - match: '^(?!    )'
+          pop: 4
+        - match: '-> (\d{4}(([-/]\d{2}([-/]\d{2}?)?)|([-/]W\d{2}))?)(?![-/])(?=[\p{P} ]|$)'
+          scope: string.quoted meta.xit.due_date
+        - match: (\#[\p{L}\d_-]+)(=((\'.*\')|(".*")|([\p{L}\d_-]+)))?
+          captures:
+            1: meta.xit.tag.name
+            2: meta.xit.tag.value
+  - match: '.*'
+    scope: invalid

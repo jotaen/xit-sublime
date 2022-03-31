@@ -1,0 +1,31 @@
+[
+  { "caption": "Preferences: [x]it!",
+    "command": "edit_settings",
+    "args": {
+      "base_file": "${packages}/xit/xit.sublime-settings",
+      "default": "{\n\t$0\n}\n"
+    }
+  },
+  { "caption": "Preferences: [x]it! Key Bindings",
+    "command": "edit_settings",
+    "args": {
+      "base_file": "${packages}/xit/Default (${platform}).sublime-keymap",
+      "default": "[\n\t$0\n]\n"
+    }
+  },
+
+  // Checking
+  {
+		"caption": "[x]it!: Mark Item Checked",
+		"command": "xit_check"
+	}, {
+    "caption": "[x]it!: Mark Item Open",
+    "command": "xit_open"
+  }, {
+    "caption": "[x]it!: Mark Item Ongoing",
+    "command": "xit_ongoing"
+  }, {
+    "caption": "[x]it!: Mark Item Obsolete",
+    "command": "xit_obsolete"
+  },
+]

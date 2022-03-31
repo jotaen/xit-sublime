@@ -57,7 +57,7 @@ class XitCheckCommand(_XitCommand):
 		modify_box(self.view, edit, '[x]')
 
 
-class XitUncheckCommand(_XitCommand):
+class XitOpenCommand(_XitCommand):
 	def run(self, edit):
 		modify_box(self.view, edit, '[ ]')
 

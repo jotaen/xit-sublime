@@ -1,21 +1,22 @@
 {
-	// Auto-save after toggling checkboxes (via the command).
+	// Auto-save after toggling checkboxes from the command palette.
 	"xit_auto_save": true,
 
-	// Per specification, enforce indentation to be 4 spaces.
-	"smart_indent": false,
+	// Per [x]it! file specification, enforce indentation to be 4 spaces.
 	"detect_indentation": false,
 	"translate_tabs_to_spaces": true,
 	"tab_size": 4,
 
-	// Per specification, use UTF-8 encoding.
+	// Per [x]it! file specification, use UTF-8 encoding.
 	"default_encoding": "UTF-8",
 
-	// Prevent auto-indenting, since this would otherwise conflict
-	// with custom macros.
+	// Prevent auto-indenting, as the macros already take
+	// proper care of [x]it!-specific indentation rules.
+	"smart_indent": false,
 	"auto_indent": false,
 
-	// Make it so that the xit-provided completions always
-	// appear at the top.
+	// Make it so that the [x]it!-generated completions always
+	// appear at the top, since they are probably more useful
+	// than the auto-generated, lexigraphic suggestions.
 	"auto_complete_preserve_order": "none",
 }

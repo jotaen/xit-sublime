@@ -2,6 +2,10 @@
 
 This packages provides syntax-highlighting and some sensible default settings for working with [[x]it!](https://xit.jotaen.net) files.
 
+> ⚠️ This package is not yet available via the Sublime Packager manager.
+> For now, you have to install it manually by downloading the contents of this repository to this location:
+> `/[PATH_TO_SUBLIME_FOLDER]/Packages/User/xit/`
+
 ## Features
 
 - Syntax highlighting

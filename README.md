@@ -1,15 +1,8 @@
 # [x]it! for Sublime Text
 
-This Sublime Package provides syntax-highlighting, shortcuts, and auto-completions for [[x]it!](https://xit.jotaen.net)
+This Sublime Package provides syntax-highlighting, shortcuts, and auto-completions for [[x]it! files](https://xit.jotaen.net).
 
-> ⚠️ **This package is not yet available via the Sublime Packager manager!**
-> 
-> For now, you have to install it manually:
-> 1. [Download this repository](https://github.com/jotaen/xit/archive/refs/heads/main.zip)
-> 2. Unpack the downloaded `.zip` file
-> 3. Rename the unzipped folder from `xit-main` to `xit`
-> 4. In the Sublime Menu, click `Preferences` → `Browse Packages`
-> 5. Move the `xit` folder to that location
+![[x]it! demo](resources/xit-demo.png)
 
 ## Features
 
@@ -23,7 +16,7 @@ This Sublime Package provides syntax-highlighting, shortcuts, and auto-completio
 
 ## Configuration
 
-### Keybindings for commands
+### Keybindings for Commands
 
 The following commands are available for you to put into your `Default.sublime-keymap` file.
 
@@ -51,6 +44,11 @@ The following settings can be overriden via your syntax-specific `xit.sublime-se
 {
 	// Auto-save after toggling checkboxes (via the command).
 	// Default: true
-	"xit_auto_save": true
+	"xit_auto_save": true,
+
+	// Always open [x]it! files with Monokai (or Mariana)
+	// for optimal, language-specific syntax highlighting.
+	// Default: (your default scheme)
+	"color_scheme": "Monokai.sublime-color-scheme",
 }
 ```

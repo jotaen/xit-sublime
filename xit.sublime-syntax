@@ -1,7 +1,7 @@
 %YAML 1.2
 # See http://www.sublimetext.com/docs/syntax.html
 ---
-name: xit
+name: '[x]it!'
 file_extensions: [xit]
 scope: source.xit
 contexts:
@@ -24,64 +24,64 @@ contexts:
 
   # ...or with a title (single line)
   - match: '^[^\s].*'
-    scope: constant.language meta.xit.title
+    scope: constant.language.xit entity.other.title.xit
     push: items
 
   # Anything else is invalid.
   - match: '^.*'
-    scope: invalid
+    scope: invalid.xit
 
   items:
-  - meta_scope: meta.xit.item
+  - meta_scope: entity.other.item.xit
   - include: exit_on_blankline
 
   # Match checkboxes and set meta scopes.
   - match: '^(?=\[ \])'
     push:
-    - meta_scope: meta.xit.status.open
+    - meta_scope: entity.other.status.open.xit
     - include: item
   - match: '^(?=\[x\])'
     push:
-    - meta_scope: meta.xit.status.checked
+    - meta_scope: entity.other.status.checked.xit
     - include: item
   - match: '^(?=\[@\])'
     push:
-    - meta_scope: meta.xit.status.ongoing
+    - meta_scope: entity.other.status.ongoing.xit
     - include: item
   - match: '^(?=\[~\])'
     push:
-    - meta_scope: meta.xit.status.obsolete
+    - meta_scope: entity.other.status.obsolete.xit
     - include: item
 
   - match: '.*'
-    scope: invalid
+    scope: invalid.xit
 
   item:
   - include: exit_on_blankline
 
   - match: '^\[.\](?= |$)'
-    scope: variable.parameter meta.xit.checkbox
+    scope: variable.parameter.xit entity.other.checkbox.xit
     push:
     - include: exit_on_blankline
     - match: ' '
       push:
       - match: '((!*)(\.*)|(\.*)(!*))(?= |$)'
         captures:
-          2: keyword meta.xit.priority.exclamation
-          3: keyword meta.xit.priority.dot
-          4: keyword meta.xit.priority.dot
-          5: keyword meta.xit.priority.exclamation
+          2: keyword.xit entity.other.priority.exclamation.xit
+          3: keyword.xit entity.other.priority.dot.xit
+          4: keyword.xit entity.other.priority.dot.xit
+          5: keyword.xit entity.other.priority.exclamation.xit
       - match: ''
         push:
         - include: exit_on_blankline
-        - meta_scope: comment meta.xit.description
+        - meta_scope: comment.xit entity.other.description.xit meta.description.xit
         - match: '^(?!    )'
           pop: 4
         - match: '-> (\d{4}(([-/]\d{2}([-/]\d{2}?)?)|([-/]W\d{2}))?)(?![-/])(?=[\p{P} ]|$)'
-          scope: string.quoted meta.xit.due_date
+          scope: string.quoted entity.other.due_date.xit
         - match: (\#[\p{L}\d_-]+)(=((\'.*\')|(".*")|([\p{L}\d_-]+)))?
           captures:
-            1: meta.xit.tag.name
-            2: meta.xit.tag.value
+            1: entity.other.tag.name.xit
+            2: entity.other.tag.value.xit
   - match: '.*'
-    scope: invalid
+    scope: invalid.xit

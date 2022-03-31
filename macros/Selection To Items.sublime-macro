@@ -1,6 +1,0 @@
-[
-	{ "command": "split_selection_into_lines" },
-	{ "command": "move_to", "args": {"to": "hardbol", "extend": false}  },
-	{ "command": "insert", "args": {"characters": "[ ] "} },
-	{ "command": "move_to", "args": {"to": "hardeol", "extend": true}  },
-]

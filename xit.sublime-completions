@@ -3,21 +3,25 @@
     "completions": [
         {
             "trigger": "x",
+            "annotation": "Check Item",
             "contents": "[x] ",
             "annotation": "[x] ",
             "kind": "snippet"
         }, {
             "trigger": "o",
+            "annotation": "Open Item",
             "contents": "[ ] ",
             "annotation": "[ ] ",
             "kind": "snippet"
         }, {
             "trigger": "s",
+            "annotation": "Obsolete Item",
             "contents": "[~] ",
             "annotation": "[~] ",
             "kind": "snippet"
         }, {
             "trigger": "a",
+            "annotation": "Ongoing Item",
             "contents": "[@] ",
             "annotation": "[@] ",
             "kind": "snippet"

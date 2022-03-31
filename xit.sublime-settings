@@ -2,6 +2,11 @@
 	// Auto-save after toggling checkboxes from the command palette.
 	"xit_auto_save": true,
 
+	// Always open [x]it! files with a specific theme.
+	// For Monokai and Mariana, there is language-specific
+	// syntax highlighting.
+	// "color_scheme": "Monokai.sublime-color-scheme",
+
 	// Per [x]it! file specification, enforce indentation to be 4 spaces.
 	"detect_indentation": false,
 	"translate_tabs_to_spaces": true,
@@ -11,7 +16,8 @@
 	"default_encoding": "UTF-8",
 
 	// Prevent auto-indenting, as the macros already take
-	// proper care of [x]it!-specific indentation rules.
+	// proper care of [x]it!-specific indentation behaviour
+	// and would otherwise conflict.
 	"smart_indent": false,
 	"auto_indent": false,
 

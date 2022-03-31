@@ -5,17 +5,17 @@
 		"command": "run_macro_file",
 		"args": {"file": "Packages/xit/macros/Append Item.sublime-macro"},
 		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "meta.xit.description" },
+			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
 			{ "key": "preceding_text", "operator": "regex_match", "operand": "^(\\[.\\]|    ).+", "match_all": true },
 		]
 	}, {
-		// If the cursor contains just an empty item, clear it out when pressing enter.
+		// If the line contains just an empty item, clear it out when pressing enter.
 		"keys": ["enter"],
 		"command": "run_macro_file",
 		"args": {"file": "Packages/xit/macros/Clear Void Item.sublime-macro"},
 		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "meta.xit.description" },
+			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
 			{ "key": "preceding_text", "operator": "regex_match", "operand": "^(\\[.\\])? *$", "match_all": true },
 		]
@@ -25,7 +25,7 @@
 		"command": "run_macro_file",
 		"args": {"file": "Packages/xit/macros/Append Description Line.sublime-macro"},
 		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "meta.xit.description" },
+			{ "key": "selector", "operator": "equal", "operand": "meta.description.xit" },
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
 			{ "key": "preceding_text", "operator": "regex_match", "operand": "^(\\[.\\] |    ).*", "match_all": true },
 		]
@@ -37,15 +37,6 @@
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 			{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
-		]
-	}, {
-		// Turn a selection of lines into an item list.
-		"keys": ["tab"],
-		"command": "run_macro_file",
-		"args": {"file": "Packages/xit/macros/Selection To Items.sublime-macro"},
-		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
-			{ "key": "selection_empty", "operator": "equal", "operand": false },
 		]
 	},
 ]

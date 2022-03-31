@@ -9,7 +9,7 @@ BOX_PATTERN = re.compile('\[[ x~@]\]')
 INDENT_SEQUENCE = '    '
 
 
-def modify_box(view, edit, replacement):
+def toggle_status(view, edit, replacement):
 	# Iterate through all selections (there might be
 	# multiple, due to multi-cursor-action), and all
 	# their lines.
@@ -54,19 +54,19 @@ class _XitCommand(sublime_plugin.TextCommand):
 
 class XitCheckCommand(_XitCommand):
 	def run(self, edit):
-		modify_box(self.view, edit, '[x]')
+		toggle_status(self.view, edit, '[x]')
 
 
 class XitOpenCommand(_XitCommand):
 	def run(self, edit):
-		modify_box(self.view, edit, '[ ]')
+		toggle_status(self.view, edit, '[ ]')
 
 
 class XitObsoleteCommand(_XitCommand):
 	def run(self, edit):
-		modify_box(self.view, edit, '[~]')
+		toggle_status(self.view, edit, '[~]')
 
 
 class XitOngoingCommand(_XitCommand):
 	def run(self, edit):
-		modify_box(self.view, edit, '[@]')
+		toggle_status(self.view, edit, '[@]')

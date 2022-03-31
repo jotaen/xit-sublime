@@ -1,8 +1,5 @@
 # https://www.sublimetext.com/docs/api_reference.html
 
-# This file must stay in the root directory, otherwise the
-# completions won’t get automatically reloaded.
-
 import re
 import sublime
 import sublime_plugin
@@ -40,7 +37,7 @@ def complete(trigger, value, details):
 		annotation='-> '+value,
 		completion='-> '+value,
 		completion_format=sublime.COMPLETION_FORMAT_SNIPPET,
-		kind=(sublime.KIND_ID_AMBIGUOUS, '☑', 'xit'),
+		kind=(sublime.KIND_ID_AMBIGUOUS, '☑', '[x]it!'),
 		details=details,
 	)
 
@@ -48,7 +45,7 @@ def complete(trigger, value, details):
 class XitEventListener(sublime_plugin.EventListener):
 	def on_query_completions(self, view, prefix, locations):
 		# Only offer due dates within description scope.
-		if not view.match_selector(locations[0], 'meta.xit.description'):
+		if not view.match_selector(locations[0], 'meta.description.xit'):
 			return
 
 		cursor = view.line(view.sel()[0])

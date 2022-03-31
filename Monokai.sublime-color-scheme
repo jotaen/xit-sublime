@@ -18,79 +18,79 @@
 
 		// Title
 		{
-			"scope": "meta.xit.title",
+			"scope": "entity.other.title.xit",
 			"foreground": "var(title)",
 			"font_style": "underline"
 		},
 
 		// Checkboxes
 		{
-			"scope": "meta.xit.status.open meta.xit.checkbox",
+			"scope": "entity.other.status.open.xit entity.other.checkbox.xit",
 			"foreground": "#73daff",
 			"font_style": "bold"
 		}, {
-			"scope": "meta.xit.status.ongoing meta.xit.checkbox",
+			"scope": "entity.other.status.ongoing.xit entity.other.checkbox.xit",
 			"foreground": "#f199ff",
 			"font_style": "bold"
 		}, {
-			"scope": "meta.xit.status.checked meta.xit.checkbox",
+			"scope": "entity.other.status.checked.xit entity.other.checkbox.xit",
 			"foreground": "#a9ff6b",
 			"font_style": "bold"
 		}, {
-			"scope": "meta.xit.status.obsolete meta.xit.checkbox",
+			"scope": "entity.other.status.obsolete.xit entity.other.checkbox.xit",
 			"foreground": "#777777",
 			"font_style": "bold"
 		},
 
 		// Priority
 		{
-			"scope": "meta.xit.priority.exclamation",
+			"scope": "entity.other.priority.exclamation.xit",
 			"foreground": "var(priority)",
 			"font_style": "bold"
 		}, {
-			"scope": "meta.xit.status.obsolete meta.xit.priority.exclamation",
+			"scope": "entity.other.status.obsolete.xit entity.other.priority.exclamation.xit",
 			"foreground": "color(var(priority) alpha(0.35))"
 		}, {
-			"scope": "meta.xit.status.checked meta.xit.priority.exclamation",
+			"scope": "entity.other.status.checked.xit entity.other.priority.exclamation.xit",
 			"foreground": "color(var(priority) alpha(0.35))"
 		}, {
-			"scope": "meta.xit.priority.dot",
+			"scope": "entity.other.priority.dot.xit",
 			"foreground": "color(var(priority) alpha(0.5))"
 		},
 
 		// Description
 		{
-			"scope": "meta.xit.description",
+			"scope": "entity.other.description.xit",
 			"foreground": "color(var(description) alpha(1.0))"
 		}, {
-			"scope": "meta.xit.status.checked meta.xit.description",
+			"scope": "entity.other.status.checked.xit entity.other.description.xit",
 			"foreground": "color(var(description) alpha(0.5))"
 		}, {
-			"scope": "meta.xit.status.obsolete meta.xit.description",
+			"scope": "entity.other.status.obsolete.xit entity.other.description.xit",
 			"foreground": "color(var(description) alpha(0.5))"
 		},
 
 		// Due date
 		{
-			"scope": "meta.xit.due_date",
+			"scope": "entity.other.due_date.xit",
 			"foreground": "color(var(due_date) alpha(1.0))"
 		}, {
-			"scope": "meta.xit.status.checked meta.xit.due_date",
+			"scope": "entity.other.status.checked.xit entity.other.due_date.xit",
 			"foreground": "color(var(due_date) alpha(0.5))"
 		}, {
-			"scope": "meta.xit.status.ongoing meta.xit.due_date",
+			"scope": "entity.other.status.ongoing.xit entity.other.due_date.xit",
 			"foreground": "color(var(due_date) alpha(1.0))"
 		}, {
-			"scope": "meta.xit.status.obsolete meta.xit.due_date",
+			"scope": "entity.other.status.obsolete.xit entity.other.due_date.xit",
 			"foreground": "color(var(due_date) alpha(0.5))"
 		},
 
 		// Tag
 		{
-			"scope": "meta.xit.tag",
+			"scope": "entity.other.tag.name.xit",
 			"font_style": "bold italic"
 		}, {
-			"scope": "meta.xit.tag.value",
+			"scope": "entity.other.tag.value.xit",
 			"font_style": "italic"
 		}
 	]

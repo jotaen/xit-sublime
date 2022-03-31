@@ -32,6 +32,7 @@ contexts:
     scope: invalid
 
   items:
+  - meta_scope: meta.xit.item
   - include: exit_on_blankline
 
   # Match checkboxes and set meta scopes.

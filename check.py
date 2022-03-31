@@ -47,21 +47,26 @@ def modify_box(view, edit, replacement):
 				sublime.set_timeout(save, 0)  # Needs to be queued apparently.
 
 
-class XitCheckCommand(sublime_plugin.TextCommand):
+class _XitCommand(sublime_plugin.TextCommand):
+	def is_enabled(self):
+		return self.view.syntax().scope == 'source.xit'
+
+
+class XitCheckCommand(_XitCommand):
 	def run(self, edit):
 		modify_box(self.view, edit, '[x]')
 
 
-class XitUncheckCommand(sublime_plugin.TextCommand):
+class XitUncheckCommand(_XitCommand):
 	def run(self, edit):
 		modify_box(self.view, edit, '[ ]')
 
 
-class XitObsoleteCommand(sublime_plugin.TextCommand):
+class XitObsoleteCommand(_XitCommand):
 	def run(self, edit):
 		modify_box(self.view, edit, '[~]')
 
 
-class XitOngoingCommand(sublime_plugin.TextCommand):
+class XitOngoingCommand(_XitCommand):
 	def run(self, edit):
 		modify_box(self.view, edit, '[@]')

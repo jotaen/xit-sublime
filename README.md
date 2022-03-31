@@ -3,6 +3,7 @@
 This Sublime Package provides syntax-highlighting, shortcuts, and auto-completions for [[x]it!](https://xit.jotaen.net)
 
 > ⚠️ **This package is not yet available via the Sublime Packager manager!**
+> 
 > For now, you have to install it manually:
 > 1. [Download this repository](https://github.com/jotaen/xit/archive/refs/heads/main.zip)
 > 2. Unpack the downloaded `.zip` file
@@ -26,7 +27,7 @@ This Sublime Package provides syntax-highlighting, shortcuts, and auto-completio
 
 The following commands are available for you to put into your `Default.sublime-keymap` file.
 
-```json
+```js
 [
 	// Toggle item status to checked [x]
 	{ "keys": ["ctrl+shift+x"], "command": "xit_check" },
@@ -34,7 +35,7 @@ The following commands are available for you to put into your `Default.sublime-k
 	// Toggle item status to open [ ]
 	{ "keys": ["ctrl+shift+o"], "command": "xit_open" },
 
-	// Toggle item status to ongoign [@]
+	// Toggle item status to ongoing [@]
 	{ "keys": ["ctrl+shift+a"], "command": "xit_ongoing" },
 
 	// Toggle item status to obsolete [~]
@@ -46,7 +47,7 @@ The following commands are available for you to put into your `Default.sublime-k
 
 The following settings can be overriden via your syntax-specific `xit.sublime-settings` file.
 
-```json
+```js
 {
 	// Auto-save after toggling checkboxes (via the command).
 	// Default: true

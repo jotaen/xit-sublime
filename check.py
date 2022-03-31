@@ -30,10 +30,21 @@ def modify_box(view, edit, replacement):
 					else:
 						break
 
-			# If the line starts with a box, modify it.
+			# If the line doesn’t start with a box, return.
 			box_candidate = sublime.Region(line.begin(), line.begin() + len(replacement))
-			if BOX_PATTERN.match(view.substr(box_candidate)):
-				view.replace(edit, box_candidate, replacement)
+			if not BOX_PATTERN.match(view.substr(box_candidate)):
+				return
+
+			# Replace status.
+			view.replace(edit, box_candidate, replacement)
+
+			# Auto-save, if enabled, and if there is a backing file.
+			settings = sublime.load_settings('xit.sublime-settings')
+			if settings.get('xit_auto_save'):
+				def save():
+					if view.file_name():
+						view.run_command('save')
+				sublime.set_timeout(save, 0)  # Needs to be queued apparently.
 
 
 class XitCheckCommand(sublime_plugin.TextCommand):

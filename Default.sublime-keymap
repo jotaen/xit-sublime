@@ -3,7 +3,7 @@
 		// Insert new line with item
 		"keys": ["enter"],
 		"command": "run_macro_file",
-		"args": {"file": "Packages/xit/functions/Append Item.sublime-macro"},
+		"args": {"file": "Packages/xit/macros/Append Item.sublime-macro"},
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "meta.xit.description" },
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
@@ -13,7 +13,7 @@
 		// Clear void item (or blank line)
 		"keys": ["enter"],
 		"command": "run_macro_file",
-		"args": {"file": "Packages/xit/functions/Clear Void Item.sublime-macro"},
+		"args": {"file": "Packages/xit/macros/Clear Void Item.sublime-macro"},
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "meta.xit.description" },
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
@@ -23,7 +23,7 @@
 		// Insert subsequent description line
 		"keys": ["shift+enter"],
 		"command": "run_macro_file",
-		"args": {"file": "Packages/xit/functions/Append Description Line.sublime-macro"},
+		"args": {"file": "Packages/xit/macros/Append Description Line.sublime-macro"},
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "meta.xit.description" },
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
@@ -33,7 +33,7 @@
 		// Insert open checkbox at beginning of line
 		"keys": ["["],
 		"command": "run_macro_file",
-		"args": {"file": "Packages/xit/functions/Insert Open Checkbox.sublime-macro"},
+		"args": {"file": "Packages/xit/macros/Insert Open Checkbox.sublime-macro"},
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 			{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
@@ -42,7 +42,7 @@
 		// Turn selection into checklist
 		"keys": ["tab"],
 		"command": "run_macro_file",
-		"args": {"file": "Packages/xit/functions/Selection To Items.sublime-macro"},
+		"args": {"file": "Packages/xit/macros/Selection To Items.sublime-macro"},
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 			{ "key": "selection_empty", "operator": "equal", "operand": false },

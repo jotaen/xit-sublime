@@ -1,4 +1,7 @@
 {
+	// [x]it! Auto-save after toggling checkboxes (via the command).
+	"xit_auto_save": true,
+
 	// Per specification, enforce indentation to be 4 spaces.
 	"smart_indent": false,
 	"detect_indentation": false,

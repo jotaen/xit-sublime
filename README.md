@@ -1,10 +1,14 @@
 # [x]it! for Sublime Text
 
-This packages provides syntax-highlighting and some sensible default settings for working with [[x]it!](https://xit.jotaen.net) files.
+This Sublime Package provides syntax-highlighting, shortcuts, and auto-completions for [[x]it!](https://xit.jotaen.net)
 
-> ⚠️ This package is not yet available via the Sublime Packager manager.
-> For now, you have to install it manually by downloading the contents of this repository to this location:
-> `/[PATH_TO_SUBLIME_FOLDER]/Packages/User/xit/`
+> ⚠️ **This package is not yet available via the Sublime Packager manager!**
+> For now, you have to install it manually:
+> 1. [Download this repository](https://github.com/jotaen/xit/archive/refs/heads/main.zip)
+> 2. Unpack the downloaded `.zip` file
+> 3. Rename the unzipped folder from `xit-main` to `xit`
+> 4. In the Sublime Menu, click `Preferences` → `Browse Packages`
+> 5. Move the `xit` folder to that location
 
 ## Features
 

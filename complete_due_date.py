@@ -7,7 +7,7 @@ import datetime
 import calendar
 
 
-SHORTCUT_PATTERN = re.compile('.*((\d+)([dwmy]))$')
+SHORTCUT_PATTERN = re.compile(' ((\d+)([dwmy]))$')
 
 
 def add_months(date, months):

@@ -3,7 +3,7 @@
 		// When inside an item group, insert a new item when pressing enter.
 		"keys": ["enter"],
 		"command": "run_macro_file",
-		"args": {"file": "Packages/xit/macros/Append Item.sublime-macro"},
+		"args": {"file": "Packages/xit!/macros/Append Item.sublime-macro"},
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
@@ -13,7 +13,7 @@
 		// If the line contains just an empty item, clear it out when pressing enter.
 		"keys": ["enter"],
 		"command": "run_macro_file",
-		"args": {"file": "Packages/xit/macros/Clear Void Item.sublime-macro"},
+		"args": {"file": "Packages/xit!/macros/Clear Void Item.sublime-macro"},
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
@@ -23,7 +23,7 @@
 		// When inside an item scope, continue the description (indented) when pressing shift+enter.
 		"keys": ["shift+enter"],
 		"command": "run_macro_file",
-		"args": {"file": "Packages/xit/macros/Append Description Line.sublime-macro"},
+		"args": {"file": "Packages/xit!/macros/Append Description Line.sublime-macro"},
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "meta.description.xit" },
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
@@ -33,7 +33,7 @@
 		// When at the beginning of a line and pressing `[`, complete to `[ ] `.
 		"keys": ["["],
 		"command": "run_macro_file",
-		"args": {"file": "Packages/xit/macros/Insert Open Checkbox.sublime-macro"},
+		"args": {"file": "Packages/xit!/macros/Insert Open Checkbox.sublime-macro"},
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.xit" },
 			{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },

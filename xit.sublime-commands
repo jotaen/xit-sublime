@@ -2,7 +2,7 @@
   { "caption": "Preferences: [x]it!",
     "command": "edit_settings",
     "args": {
-      "base_file": "${packages}/xit/xit.sublime-settings",
+      "base_file": "${packages}/xit!/xit.sublime-settings",
       "default": "{\n\t$0\n}\n"
     }
   },

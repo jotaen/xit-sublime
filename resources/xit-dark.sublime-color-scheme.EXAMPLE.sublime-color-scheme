@@ -35,12 +35,12 @@
 			"foreground": "var(xit_checkbox_open)",
 			"font_style": "bold"
 		}, {
-			"scope": "markup.other.checkbox.ongoing.xit",
-			"foreground": "var(xit_checkbox_checked)",
-			"font_style": "bold"
-		}, {
 			"scope": "markup.other.checkbox.checked.xit",
 			"foreground": "var(xit_checkbox_ongoing)",
+			"font_style": "bold"
+		}, {
+			"scope": "markup.other.checkbox.ongoing.xit",
+			"foreground": "var(xit_checkbox_checked)",
 			"font_style": "bold"
 		}, {
 			"scope": "markup.other.checkbox.obsolete.xit",

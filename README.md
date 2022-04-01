@@ -53,6 +53,23 @@ The pre-defined syntax highlighting should look meaningful in most available col
 
 For [x]it! specific customisations, you can specify the following colour overrides:
 
--
+- `markup.other.title.xit` For the item group title
+- `markup.other.checkbox.open.xit` For an open checkbox: `[ ]`
+- `markup.other.checkbox.checked.xit` For a checked checkbox: `[x]`
+- `markup.other.checkbox.ongoing.xit` For an ongoing checkbox: `[@]`
+- `markup.other.checkbox.obsolete.xit` For an obsolete checkbox: `[~]`
+- `markup.other.priority.exclamation.xit` For the exclamation mark of the priority: `!`
+- `markup.other.priority.dot.xit` For the dot of the priority: `.`
+- `markup.other.description.xit` For the item description
+- `markup.other.due_date.xit` For the due date within the description: `-> 2022-03-27`
+- `markup.other.tag.name.xit` For a tag: `#example`
+- `markup.other.tag.value.xit` For the value of a tag: `#example=value`
 
-Please also [see here](resources/Monokai.sublime-color-scheme) for a complete example for the Monokai scheme.
+Additionally, you can reference the following meta scopes to make adjustments based on the item status:
+
+- `meta.item.status.open.xit`
+- `meta.item.status.checked.xit`
+- `meta.item.status.ongoing.xit`
+- `meta.item.status.obsolete.xit`
+
+Please also [see here](resources/xit-dark.sublime-color-scheme.EXAMPLE) for a complete colouring example based on a dark scheme.

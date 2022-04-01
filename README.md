@@ -7,7 +7,6 @@ This Sublime Package provides syntax-highlighting, shortcuts, and auto-completio
 ## Features
 
 - Syntax highlighting
-	+ Provides meaningful colours for the Monokai and Mariana themes
 - Shortcut commands for toggling the item status
 - Smart completions for due dates
 	+ Type e.g. `5w` and have auto-complete resolve it to the date in 5 weeks from now.
@@ -42,13 +41,18 @@ The following settings can be overriden via your syntax-specific `xit.sublime-se
 
 ```js
 {
-	// Auto-save after toggling checkboxes (via the command).
+	// Auto-save after toggling checkboxes (via the commands `xit_check`, etc.).
 	// Default: true
 	"xit_auto_save": true,
-
-	// Always open [x]it! files with Monokai (or Mariana)
-	// for optimal, language-specific syntax highlighting.
-	// Default: (your default scheme)
-	"color_scheme": "Monokai.sublime-color-scheme",
 }
 ```
+
+### Syntax Highlighting / Colour overrides
+
+The pre-defined syntax highlighting should look meaningful in most available colour schemes.
+
+For [x]it! specific customisations, you can specify the following colour overrides:
+
+-
+
+Please also [see here](resources/Monokai.sublime-color-scheme) for a complete example for the Monokai scheme.

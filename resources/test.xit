@@ -25,7 +25,7 @@ Description
 [ ] Single item in between (with an indented blankline below)
     
 Tags
-[ ] Item with #tag in the #text, for #categorising.
+[ ] Item with #tag in the #text, for #categorising:#things.
 [@] #nodescription
 [x] That should also work on...
     ...subsequent #lines.

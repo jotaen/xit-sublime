@@ -1,5 +1,6 @@
 %YAML 1.2
-# See http://www.sublimetext.com/docs/syntax.html
+# http://www.sublimetext.com/docs/syntax.html
+# https://www.sublimetext.com/docs/scope_naming.html
 ---
 name: '[x]it!'
 file_extensions: [xit]
@@ -8,7 +9,7 @@ contexts:
 
   # Every scope should have a conventional fallback
   # scope, so that the highlighting also works with
-  # other themes.
+  # other themes, in an at least somewhat meaningful way.
 
   main:
   - include: group
@@ -24,7 +25,7 @@ contexts:
 
   # ...or with a title (single line)
   - match: '^[^\s].*'
-    scope: constant.language.xit entity.other.title.xit
+    scope: markup.underline.xit markup.other.title.xit
     push: items
 
   # Anything else is invalid.
@@ -32,56 +33,61 @@ contexts:
     scope: invalid.xit
 
   items:
-  - meta_scope: entity.other.item.xit
   - include: exit_on_blankline
 
   # Match checkboxes and set meta scopes.
-  - match: '^(?=\[ \])'
+  - match: '^\[ \](?= |$)'
+    scope: markup.bold variable.function.xit markup.other.checkbox.open.xit
     push:
-    - meta_scope: entity.other.status.open.xit
+    - meta_scope: meta.item.status.open.xit
     - include: item
-  - match: '^(?=\[x\])'
+  - match: '^\[x\](?= |$)'
+    scope: markup.bold.xit markup.inserted.xit markup.other.checkbox.checked.xit
     push:
-    - meta_scope: entity.other.status.checked.xit
+    - meta_scope: comment.xit meta.item.status.checked.xit
     - include: item
-  - match: '^(?=\[@\])'
+  - match: '^\[@\](?= |$)'
+    scope: markup.bold.xit constant.numeric.xit markup.other.checkbox.ongoing.xit
     push:
-    - meta_scope: entity.other.status.ongoing.xit
+    - meta_scope: meta.item.status.ongoing.xit
     - include: item
-  - match: '^(?=\[~\])'
+  - match: '^\[~\](?= |$)'
+    scope: markup.bold.xit comment.xit markup.other.checkbox.obsolete.xit
     push:
-    - meta_scope: entity.other.status.obsolete.xit
+    - meta_scope: comment.xit meta.item.status.obsolete.xit
     - include: item
 
+  # Any other “non-item” is invalid.
   - match: '.*'
     scope: invalid.xit
 
   item:
   - include: exit_on_blankline
 
-  - match: '^\[.\](?= |$)'
-    scope: variable.parameter.xit entity.other.checkbox.xit
+  - match: ' '
     push:
-    - include: exit_on_blankline
-    - match: ' '
+    - match: '((!*)(\.*)|(\.*)(!*))(?= |$)'
+      captures:
+        2: markup.deleted.xit markup.bold markup.other.priority.exclamation.xit
+        3: markup.deleted.xit markup.other.priority.dot.xit
+        4: markup.deleted.xit markup.other.priority.dot.xit
+        5: markup.deleted.xit markup.bold markup.other.priority.exclamation.xit
+    - match: ''
       push:
-      - match: '((!*)(\.*)|(\.*)(!*))(?= |$)'
+      - include: exit_on_blankline
+      - meta_scope: markup.other.description.xit meta.description.xit
+      - match: '^(?!    )'
+        pop: 3
+
+      # Due dates.
+      - match: '-> (\d{4}(([-/]\d{2}([-/]\d{2}?)?)|([-/]W\d{2}))?)(?![-/])(?=[\p{P} ]|$)'
+        scope: storage.type.xit markup.other.due_date.xit
+
+      # Tags. (The `match: ...` can’t be quoted!)
+      - match: ((?<=[\s\p{P}])\#[\p{L}\d_-]+)(=((\'.*\')|(".*")|([\p{L}\d_-]+)))?
         captures:
-          2: keyword.xit entity.other.priority.exclamation.xit
-          3: keyword.xit entity.other.priority.dot.xit
-          4: keyword.xit entity.other.priority.dot.xit
-          5: keyword.xit entity.other.priority.exclamation.xit
-      - match: ''
-        push:
-        - include: exit_on_blankline
-        - meta_scope: comment.xit entity.other.description.xit meta.description.xit
-        - match: '^(?!    )'
-          pop: 4
-        - match: '-> (\d{4}(([-/]\d{2}([-/]\d{2}?)?)|([-/]W\d{2}))?)(?![-/])(?=[\p{P} ]|$)'
-          scope: string.quoted entity.other.due_date.xit
-        - match: (\#[\p{L}\d_-]+)(=((\'.*\')|(".*")|([\p{L}\d_-]+)))?
-          captures:
-            1: entity.other.tag.name.xit
-            2: entity.other.tag.value.xit
+          1: markup.raw.inline.xit markup.other.tag.name.xit
+          2: markup.raw.inline.xit markup.italic markup.other.tag.value.xit
+
   - match: '.*'
     scope: invalid.xit

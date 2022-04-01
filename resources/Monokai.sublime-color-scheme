@@ -1,0 +1,107 @@
+{
+	// https://www.sublimetext.com/docs/color_schemes.html
+
+	// These are [x]it!-specific colours for the Monokai scheme.
+	// They should also work well with most other dark schemes.
+
+	"variables": {
+		"xit_checkbox_open": "#73daff",
+		"xit_checkbox_checked": "#f199ff",
+		"xit_checkbox_ongoing": "#a9ff6b",
+		"xit_checkbox_obsolete": "#777777",
+		"xit_title": "#ffffff",
+		"xit_description": "#bfd2d9",
+		"xit_priority": "#ff0550",
+		"xit_due_date": "#d9f0a8",
+		"xit_tag_bg": "#393939",
+	},
+
+	"rules": [
+		{
+			"scope": "source.xit",
+			"foreground": "#ffffff",
+		},
+
+		// Title
+		{
+			"scope": "markup.other.title.xit",
+			"foreground": "var(xit_title)",
+			"font_style": "underline"
+		},
+
+		// Checkboxes
+		{
+			"scope": "markup.other.checkbox.open.xit",
+			"foreground": "var(xit_checkbox_open)",
+			"font_style": "bold"
+		}, {
+			"scope": "markup.other.checkbox.ongoing.xit",
+			"foreground": "var(xit_checkbox_checked)",
+			"font_style": "bold"
+		}, {
+			"scope": "markup.other.checkbox.checked.xit",
+			"foreground": "var(xit_checkbox_ongoing)",
+			"font_style": "bold"
+		}, {
+			"scope": "markup.other.checkbox.obsolete.xit",
+			"foreground": "var(xit_checkbox_obsolete)",
+			"font_style": "bold"
+		},
+	
+		// Priority
+		{
+			"scope": "markup.other.priority.exclamation.xit",
+			"foreground": "var(xit_priority)",
+			"font_style": "bold"
+		}, {
+			"scope": "meta.item.status.obsolete.xit markup.other.priority.exclamation.xit",
+			"foreground": "color(var(xit_priority) alpha(0.35))"
+		}, {
+			"scope": "meta.item.status.checked.xit markup.other.priority.exclamation.xit",
+			"foreground": "color(var(xit_priority) alpha(0.35))"
+		}, {
+			"scope": "markup.other.priority.dot.xit",
+			"foreground": "color(var(xit_priority) alpha(0.5))"
+		},
+
+		// Description
+		{
+			"scope": "meta.item.status.open.xit markup.other.description.xit",
+			"foreground": "color(var(xit_description) alpha(1.0))"
+		}, {
+			"scope": "meta.item.status.checked.xit markup.other.description.xit",
+			"foreground": "color(var(xit_description) alpha(0.5))"
+		}, {
+			"scope": "meta.item.status.ongoing.xit markup.other.description.xit",
+			"foreground": "color(var(xit_description) alpha(1.0))"
+		}, {
+			"scope": "meta.item.status.obsolete.xit markup.other.description.xit",
+			"foreground": "color(var(xit_description) alpha(0.5))"
+		},
+
+		// Due date
+		{
+			"scope": "meta.item.status.open.xit markup.other.due_date.xit",
+			"foreground": "color(var(xit_due_date) alpha(1.0))"
+		}, {
+			"scope": "meta.item.status.checked.xit markup.other.due_date.xit",
+			"foreground": "color(var(xit_due_date) alpha(0.5))"
+		}, {
+			"scope": "meta.item.status.ongoing.xit markup.other.due_date.xit",
+			"foreground": "color(var(xit_due_date) alpha(1.0))"
+		}, {
+			"scope": "meta.item.status.obsolete.xit markup.other.due_date.xit",
+			"foreground": "color(var(xit_due_date) alpha(0.5))"
+		},
+
+		// Tag
+		{
+			"scope": "markup.other.tag.name.xit",
+			"background": "var(xit_tag_bg)",
+		}, {
+			"scope": "markup.other.tag.value.xit",
+			"font_style": "italic",
+			"background": "var(xit_tag_bg)",
+		}
+	]
+}

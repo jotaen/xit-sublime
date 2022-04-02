@@ -6,10 +6,11 @@ import sublime_plugin
 
 
 BOX_PATTERN = re.compile('\[[ x~@]\]')
+BOX_LENGTH = 3
 INDENT_SEQUENCE = '    '
 
 
-def toggle_status(view, edit, replacement):
+def set_status(view, edit, replaceBy):
 	# Iterate through all selections (there might be
 	# multiple, due to multi-cursor-action), and all
 	# their lines.
@@ -31,12 +32,14 @@ def toggle_status(view, edit, replacement):
 						break
 
 			# If the line doesn’t start with a box, return.
-			box_candidate = sublime.Region(line.begin(), line.begin() + len(replacement))
-			if not BOX_PATTERN.match(view.substr(box_candidate)):
+			checkbox_region = sublime.Region(line.begin(), line.begin() + BOX_LENGTH)
+			checkbox = view.substr(checkbox_region)
+			if not BOX_PATTERN.match(checkbox):
 				return
 
 			# Replace status.
-			view.replace(edit, box_candidate, replacement)
+			replacement = replaceBy(checkbox)
+			view.replace(edit, checkbox_region, replacement)
 
 			# Auto-save, if enabled, and if there is a backing file.
 			settings = sublime.load_settings('xit.sublime-settings')
@@ -54,19 +57,56 @@ class _XitCommand(sublime_plugin.TextCommand):
 
 class XitCheckCommand(_XitCommand):
 	def run(self, edit):
-		toggle_status(self.view, edit, '[x]')
+		set_status(self.view, edit, lambda _: '[x]')
 
 
 class XitOpenCommand(_XitCommand):
 	def run(self, edit):
-		toggle_status(self.view, edit, '[ ]')
+		set_status(self.view, edit, lambda _: '[ ]')
 
 
 class XitObsoleteCommand(_XitCommand):
 	def run(self, edit):
-		toggle_status(self.view, edit, '[~]')
+		set_status(self.view, edit, lambda _: '[~]')
 
 
 class XitOngoingCommand(_XitCommand):
 	def run(self, edit):
-		toggle_status(self.view, edit, '[@]')
+		set_status(self.view, edit, lambda _: '[@]')
+
+
+class XitToggleCommand(_XitCommand):
+	def _load_toggles(self):
+		self._toggles = None
+		settings = sublime.load_settings('xit.sublime-settings')
+		toggles = settings.get('xit_toggle')
+
+		# Setting value must be a non-empty list.
+		if not isinstance(toggles, list) or len(toggles) == 0:
+			return None
+
+		# List must be checkboxes as string.
+		for t in toggles:
+			if (not isinstance(t, str)) or (not len(t) == 3) or (not BOX_PATTERN.match(t)):
+				return None
+
+		self._toggles = toggles
+
+	def _cycle(self, status):
+		# Find current status, or make it fall back to first.
+		try:
+			i = self._toggles.index(status)
+		except ValueError:
+			i = -1
+
+		# Return next status in the “ring”.
+		try:
+			return self._toggles[i+1]
+		except IndexError:
+			return self._toggles[0]
+
+	def run(self, edit):
+		self._load_toggles()
+		if not self._toggles:
+			return
+		set_status(self.view, edit, self._cycle)

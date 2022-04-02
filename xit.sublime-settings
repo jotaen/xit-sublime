@@ -2,6 +2,9 @@
 	// Auto-save after toggling checkboxes from the command palette.
 	"xit_auto_save": true,
 
+	// The checkbox statuses that the `xit_toggle` command cycles through.
+	"xit_toggle": ["[ ]", "[x]"],
+
 	// Always open [x]it! files with a specific theme.
 	// For Monokai and Mariana, there is language-specific
 	// syntax highlighting.

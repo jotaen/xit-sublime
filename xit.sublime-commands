@@ -20,5 +20,8 @@
   }, {
     "caption": "[x]it!: Mark Item As Obsolete",
     "command": "xit_obsolete"
-  },
+  }, {
+    "caption": "[x]it!: Toggle Item Status",
+    "command": "xit_toggle"
+  }
 ]

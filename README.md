@@ -18,19 +18,25 @@ This Sublime Package provides syntax-highlighting, shortcuts, and auto-completio
 ### Keybindings for Commands
 
 The following commands are available for you to put into your `Default.sublime-keymap` file.
+The key combination is up to you, of course.
 
 ```js
 [
-	// Toggle item status to checked [x]
+	// Toggle checkbox status of the item.
+	// It cycles through the statuses given in the
+	// `xit_toggle` setting.
+	{ "keys": ["ctrl+shift+t"], "command": "xit_toggle" },
+
+	// Set item status to checked [x]
 	{ "keys": ["ctrl+shift+x"], "command": "xit_check" },
 	
-	// Toggle item status to open [ ]
+	// Set item status to open [ ]
 	{ "keys": ["ctrl+shift+o"], "command": "xit_open" },
 
-	// Toggle item status to ongoing [@]
+	// Set item status to ongoing [@]
 	{ "keys": ["ctrl+shift+a"], "command": "xit_ongoing" },
 
-	// Toggle item status to obsolete [~]
+	// Set item status to obsolete [~]
 	{ "keys": ["ctrl+shift+n"], "command": "xit_obsolete" },
 ]
 ```
@@ -38,12 +44,16 @@ The following commands are available for you to put into your `Default.sublime-k
 ### Settings (Syntax Specific)
 
 The following settings can be overriden via your syntax-specific `xit.sublime-settings` file.
+The values are the default ones.
 
 ```js
 {
 	// Auto-save after toggling checkboxes (via the commands `xit_check`, etc.).
-	// Default: true
 	"xit_auto_save": true,
+
+	// The checkbox statuses that the `xit_toggle` command
+	// should cycle through.
+	"xit_toggle": ["[ ]", "[x]"],
 }
 ```
 

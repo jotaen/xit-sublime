@@ -44,7 +44,7 @@ The key combination is up to you, of course.
 ### Settings (Syntax Specific)
 
 The following settings can be overriden via your syntax-specific `xit.sublime-settings` file.
-The values are the default ones.
+The values shown below are the default ones.
 
 ```js
 {
@@ -61,7 +61,7 @@ The values are the default ones.
 
 The pre-defined syntax highlighting should look meaningful in most available colour schemes.
 
-For [x]it! specific customisations, you can specify the following colour overrides:
+For [x]it! specific customisations or fixes, you can specify the following colour overrides:
 
 - `markup.other.title.xit` For the item group title
 - `markup.other.checkbox.open.xit` For an open checkbox: `[ ]`
@@ -83,3 +83,12 @@ Additionally, you can reference the following meta scopes to make adjustments ba
 - `meta.item.status.obsolete.xit`
 
 Please also [see here](resources/xit-dark.sublime-color-scheme.EXAMPLE) for a complete colouring example based on a dark scheme.
+
+You can also configure Sublime to always use a specific colour scheme with [x]it!. This is especially useful if the default colours don’t work out in your regular colour scheme. You can specify this in your syntax-specific `xit.sublime-settings` file:
+
+```js
+{
+	// Always use the Monokai scheme for [x]it!
+	"color_scheme": "Monokai.sublime-color-scheme"
+}
+```

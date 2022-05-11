@@ -83,7 +83,7 @@ contexts:
       # Added a few sanity checks (1969 < yyyy < 2100, mm < 13, dd < 32, ww < 53.)
       # Added Q1-Q4, which were missing. Made leading zeroes optional. 
       # Allow either / or - in dates, but not both
-      - match: '-> ((19[7-9]\d|20\d{2})((([-/])(0?[1-9]|1[0-2])(\5(0?[1-9]|[1-2]\d|3[0-1])?)?)|(\5(W(0?[1-9]|[1-4]\d|5[0-3])|Q[1-4])))?)(?!\5)(?=[\p{P} ]|$)'
+      - match: '-> ((19[7-9]\d|20\d{2})((([-/])(0?[1-9]|1[0-2])(\5(0?[1-9]|[1-2]\d|3[0-1])?)?)|(\5(W(0?[1-9]|[1-4]\d|5[0-3])|Q[1-4])))?)(?![-/])(?=[\p{P} ]|$)'
         scope: storage.type.xit markup.other.due_date.xit
 
       # Tags. (The `match: ...` can’t be quoted!)

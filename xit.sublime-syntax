@@ -24,8 +24,11 @@ contexts:
     push: items
 
   # ...or with a title (single line)
+  # The `entity.name.type` scope is for making the title
+  # a symbol that can be jumped to. `entity.name.section`
+  # is needed for resetting the style.
   - match: '^[^\s].*'
-    scope: markup.underline.xit markup.other.title.xit
+    scope: entity.name.type.xit entity.name.section.xit markup.underline.xit markup.other.title.xit
     push: items
 
   # Anything else is invalid.

@@ -21,6 +21,9 @@
     "caption": "[x]it!: Mark Item As Obsolete",
     "command": "xit_obsolete"
   }, {
+    "caption": "[x]it!: Mark Item As In Question",
+    "command": "xit_in_question"
+  }, {
     "caption": "[x]it!: Toggle Item Status",
     "command": "xit_toggle"
   }

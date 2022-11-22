@@ -5,7 +5,7 @@ import sublime
 import sublime_plugin
 
 
-BOX_PATTERN = re.compile('\[[ x~@]\]')
+BOX_PATTERN = re.compile('\[[ x~@?]\]')
 BOX_LENGTH = 3
 INDENT_SEQUENCE = '    '
 
@@ -73,6 +73,11 @@ class XitObsoleteCommand(_XitCommand):
 class XitOngoingCommand(_XitCommand):
 	def run(self, edit):
 		set_status(self.view, edit, lambda _: '[@]')
+
+
+class XitInQuestionCommand(_XitCommand):
+	def run(self, edit):
+		set_status(self.view, edit, lambda _: '[?]')
 
 
 class XitToggleCommand(_XitCommand):

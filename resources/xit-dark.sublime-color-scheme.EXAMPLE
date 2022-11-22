@@ -9,6 +9,7 @@
 		"xit_checkbox_checked": "#f199ff",
 		"xit_checkbox_ongoing": "#a9ff6b",
 		"xit_checkbox_obsolete": "#777777",
+		"xit_checkbox_in_question": "#ebde34",
 		"xit_title": "#ffffff",
 		"xit_description": "#bfd2d9",
 		"xit_priority": "#ff0550",
@@ -46,6 +47,10 @@
 			"scope": "markup.other.checkbox.obsolete.xit",
 			"foreground": "var(xit_checkbox_obsolete)",
 			"font_style": "bold"
+		}, {
+			"scope": "markup.other.checkbox.in-question.xit",
+			"foreground": "var(xit_checkbox_in_question)",
+			"font_style": "bold"
 		},
 	
 		// Priority
@@ -77,6 +82,9 @@
 		}, {
 			"scope": "meta.item.status.obsolete.xit markup.other.description.xit",
 			"foreground": "color(var(xit_description) alpha(0.5))"
+		}, {
+			"scope": "meta.item.status.in-question.xit markup.other.description.xit",
+			"foreground": "color(var(xit_description) alpha(1.0))"
 		},
 
 		// Due date
@@ -92,6 +100,9 @@
 		}, {
 			"scope": "meta.item.status.obsolete.xit markup.other.due_date.xit",
 			"foreground": "color(var(xit_due_date) alpha(0.5))"
+		}, {
+			"scope": "meta.item.status.in-question.xit markup.other.due_date.xit",
+			"foreground": "color(var(xit_due_date) alpha(1.0))"
 		},
 
 		// Tag

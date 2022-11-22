@@ -38,6 +38,9 @@ The key combination is up to you, of course.
 
 	// Set item status to obsolete [~]
 	{ "keys": ["ctrl+shift+n"], "command": "xit_obsolete" },
+
+	// Set item status to in-question [?]
+	{ "keys": ["ctrl+shift+q"], "command": "xit_in_question" },
 ]
 ```
 
@@ -68,6 +71,7 @@ For [x]it! specific customisations or fixes, you can specify the following colou
 - `markup.other.checkbox.checked.xit` For a checked checkbox: `[x]`
 - `markup.other.checkbox.ongoing.xit` For an ongoing checkbox: `[@]`
 - `markup.other.checkbox.obsolete.xit` For an obsolete checkbox: `[~]`
+- `markup.other.checkbox.in-question.xit` For an in-question checkbox: `[?]`
 - `markup.other.priority.exclamation.xit` For the exclamation mark of the priority: `!`
 - `markup.other.priority.dot.xit` For the dot of the priority: `.`
 - `markup.other.description.xit` For the item description
@@ -81,6 +85,7 @@ Additionally, you can reference the following meta scopes to make adjustments ba
 - `meta.item.status.checked.xit`
 - `meta.item.status.ongoing.xit`
 - `meta.item.status.obsolete.xit`
+- `meta.item.status.in-question.xit`
 
 Please also [see here](resources/xit-dark.sublime-color-scheme.EXAMPLE) for a complete colouring example based on a dark scheme.
 

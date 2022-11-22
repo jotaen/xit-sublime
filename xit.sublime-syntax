@@ -19,21 +19,21 @@ contexts:
     pop: 99999
 
   group:
-  # A group can either start with an item...
-  - match: '^(?=\[)'
-    push: items
-
-  # ...or with a title (single line)
-  # The `entity.name.type` scope is for making the title
-  # a symbol that can be jumped to. `entity.name.section`
-  # is needed for resetting the style.
-  - match: '^[^\s].*'
+  # A group can start with a title (single line), plus a
+  # group description.
+  - match: '^[^\[\s].*'
+    # The `entity.name.type` scope is for making the title
+    # a symbol that can be jumped to. `entity.name.section`
+    # is needed for resetting the style.
     scope: entity.name.type.xit entity.name.section.xit markup.underline.xit markup.other.title.xit
-    push: items
+    push:
+    - match: '^[^\[\s].*'
+      scope: entity.name.section.xit markup.italic.xit markup.other.group-description.xit
+    - match: '^'
+      pop: 1
 
-  # Anything else is invalid.
-  - match: '^.*'
-    scope: invalid.xit
+  - match: '^'
+    push: items
 
   items:
   - include: exit_on_blankline
@@ -72,7 +72,7 @@ contexts:
   item:
   - include: exit_on_blankline
 
-  - match: ' '
+  - match: ''
     push:
     - match: '((!*)(\.*)|(\.*)(!*))(?= |$)'
       captures:

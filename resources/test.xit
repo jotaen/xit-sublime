@@ -38,7 +38,7 @@
     is even ...
     longer
 
-[ ] The [following] is just ...
+[ ] The following is just ...
     [ ] description text
 
 [x] These lines ...
@@ -181,20 +181,12 @@ Todos
 [ ] Item 2
 
 Group 1
-Do all of this:
 [ ] Item
          
 Group 2
-Do...
-...all...
-...of this:
 [ ] Item
 
 Todos
-
-Todos
-Empty
- asdf
 
  Todos
 [ ] Do this
@@ -208,3 +200,4 @@ Empty
 [ ] Do this
 Todos
 [ ] Do this
+

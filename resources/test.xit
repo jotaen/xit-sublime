@@ -168,6 +168,11 @@ invalid (no space)
 [ ] #tag=""
 [ ] #tag=''
 
+[ ] #tag1 #tag2 and #tag3
+[ ] #tag1='value' #tag2='value' and #tag3='value'
+[ ] #tag1="value" #tag2="value" and #tag3="value"
+[ ] #tag1 #tag2='value' and #tag3="value"
+
 [ ] #tag="v a l u e"
 [ ] #tag='v!a.l?u+e'
 [ ] #tag='foo'bar

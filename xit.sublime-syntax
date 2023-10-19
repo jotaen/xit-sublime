@@ -94,7 +94,7 @@ contexts:
         scope: storage.type.xit markup.other.due_date.xit
 
       # Tags. (The `match: ...` can’t be quoted!)
-      - match: ((?<=[\s\p{P}])\#[\p{L}\d_-]+)(=((\'.*\')|(".*")|([\p{L}\d_-]+)))?
+      - match: ((?<=[\s\p{P}])\#[\p{L}\d_-]+)(=((\'.*?\')|(".*?")|([\p{L}\d_-]+)))?
         captures:
           1: markup.raw.inline.xit markup.other.tag.name.xit
           2: markup.raw.inline.xit markup.italic markup.other.tag.value.xit

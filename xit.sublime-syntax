@@ -50,7 +50,7 @@ contexts:
     - meta_scope: comment.xit meta.item.status.checked.xit
     - include: item
   - match: '^\[@\](?= |$)'
-    scope: markup.bold.xit constant.numeric.xit markup.other.checkbox.ongoing.xit
+    scope: markup.bold.xit constant.other.xit markup.other.checkbox.ongoing.xit
     push:
     - meta_scope: meta.item.status.ongoing.xit
     - include: item
@@ -58,6 +58,11 @@ contexts:
     scope: markup.bold.xit comment.xit markup.other.checkbox.obsolete.xit
     push:
     - meta_scope: comment.xit meta.item.status.obsolete.xit
+    - include: item
+  - match: '^\[\?\](?= |$)'
+    scope: markup.bold.xit markup.changed.xit markup.other.checkbox.in-question.xit
+    push:
+    - meta_scope: meta.item.status.in-question.xit
     - include: item
 
   # Any other “non-item” is invalid.
@@ -67,7 +72,7 @@ contexts:
   item:
   - include: exit_on_blankline
 
-  - match: ' '
+  - match: ' ?'
     push:
     - match: '((!*)(\.*)|(\.*)(!*))(?= |$)'
       captures:
@@ -82,7 +87,7 @@ contexts:
       - match: '^(?!    )'
         pop: 3
 
-      # Due dates. 
+      # Due dates.
       # It applies basic static sanity checks on the dates, but it can’t
       # enforce valid calendar dates.
       - match: '-> ((\d{4})((([-/])(0[1-9]|1[0-2])(\5(0[1-9]|[1-2]\d|3[0-1])?)?)|([-/](W(0[1-9]|[1-4]\d|5[0-3])|Q[1-4])))?)(?![-/])(?=[\p{P} ]|$)'

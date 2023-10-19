@@ -25,6 +25,12 @@
             "contents": "[@] ",
             "annotation": "[@] ",
             "kind": "snippet"
+        }, {
+            "trigger": "q",
+            "annotation": "In-Question Item",
+            "contents": "[?] ",
+            "annotation": "[?] ",
+            "kind": "snippet"
         },
     ]
 }

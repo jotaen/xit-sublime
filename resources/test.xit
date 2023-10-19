@@ -2,6 +2,7 @@
 [x] Checked
 [@] Ongoing
 [~] Obsolete
+[?] In Question
 
 [*] Invalid
 [o] Invalid
@@ -37,9 +38,6 @@
     is even ...
     longer
 
-[ ] The following is just ...
-    [ ] description text
-
 [x] These lines ...
     should all ...
     look the same
@@ -50,13 +48,25 @@
              as well
 
 [ ] The next line is ...
-invalid
+invalid (no space)
 [ ] The next line is ...
- invalid
+ invalid (1 spaces)
 [ ] The next line is ...
-   invalid
+  invalid (2 spaces)
 [ ] The next line is ...
-    invalid (it’s a tab)
+   invalid (3 spaces)
+[ ] The next line is ...
+    invalid (4 non-breaking spaces)
+[ ] The next line is ...
+    invalid (tab)
+
+[ ] A math formula: f[x]=x
+[ ] [Description text]
+[ ] [ ] Description text [ ]
+[ ] The next line is ...
+    [ ] all description text
+[ ] ! Check: [ #tags ] / [ -> 2022
+    (I.e., other tokens still work)
 
 [ ] ! This is important
 [ ] !!! This is very important
@@ -77,13 +87,13 @@ invalid
 
 [ ] !This has regular priority
 [ ] .The dot is not priority
-[ ] This is also
-    !!! not important
 
 [ ] ! !!! This is important!
 [ ] !! ! ! This ! is also important
 [ ] !. ... This . is also important
 [ ] . ! This is not important
+[ ] The next line is also ...
+    !!! not important
 
 [ ] -> 2022-01-31
 [ ] Do this -> 2022-01-31
@@ -147,6 +157,8 @@ invalid
 [ ] #tag🥳
 
 [ ] Not a tag: #
+[ ] Not a tag: #=value
+[ ] Not a tag: #="value"
 
 [ ] #tag=value
 [ ] #t-a-g=v-a-l-u-e
@@ -163,7 +175,7 @@ invalid
 [ ] #tag='foo'!!
 [ ] (#tag="bar")
 
-[ ] #tag='It\'s great
+[ ] #tag='It\'s great'
 
 [ ] #tag="v a l u e
 [ ] #tag="v a l u e'
@@ -175,17 +187,21 @@ invalid
 
 [ ] Item of another group
 
+[ ] Item
+
+[ ] Item
+         
+[ ] Item
+
+[ ] Descrip-
+    
+    tion
+
 Todos
 [ ] Item 1
 [ ] Item 2
 
-Group 1
-[ ] Item
-         
-Group 2
-[ ] Item
-
-Todos
+Empty Group
 
  Todos
 [ ] Do this
@@ -199,4 +215,12 @@ Todos
 [ ] Do this
 Todos
 [ ] Do this
+
+今日は
+[ ] 小包を受け取る
+[x] 夕食を作る
+
+Ελληνικά
+[ ] 💼 δούλεψε #σκληρά
+[ ] απολαύστε τον #ήλιο ☀️
 

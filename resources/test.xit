@@ -38,6 +38,9 @@
     is even ...
     longer
 
+[ ] The [following] is just ...
+    [ ] description text
+
 [x] These lines ...
     should all ...
     look the same
@@ -55,12 +58,6 @@ invalid
    invalid
 [ ] The next line is ...
     invalid (it’s a tab)
-
-[ ] A math formula: f[x]=x
-[ ] [Description text]
-[ ] [ ] Description text [ ]
-[ ] The following line is also …
-    [ ] … all description text
 
 [ ] ! This is important
 [ ] !!! This is very important
@@ -179,21 +176,25 @@ invalid
 
 [ ] Item of another group
 
-[ ] Item
-
-[ ] Item
-         
-[ ] Item
-
-[ ] Descrip-
-    
-    tion
-
 Todos
 [ ] Item 1
 [ ] Item 2
 
-Empty Group
+Group 1
+Do all of this:
+[ ] Item
+         
+Group 2
+Do...
+...all...
+...of this:
+[ ] Item
+
+Todos
+
+Todos
+Empty
+ asdf
 
  Todos
 [ ] Do this
@@ -207,12 +208,3 @@ Empty Group
 [ ] Do this
 Todos
 [ ] Do this
-
-今日は
-[ ] 小包を受け取る
-[x] 夕食を作る
-
-Ελληνικά
-[ ] 💼 δούλεψε #σκληρά
-[ ] απολαύστε τον #ήλιο ☀️
-

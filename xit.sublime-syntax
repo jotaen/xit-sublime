@@ -72,7 +72,7 @@ contexts:
   item:
   - include: exit_on_blankline
 
-  - match: ' ?'
+  - match: ''
     push:
     - match: '((!*)(\.*)|(\.*)(!*))(?= |$)'
       captures:
@@ -87,7 +87,7 @@ contexts:
       - match: '^(?!    )'
         pop: 3
 
-      # Due dates.
+      # Due dates. 
       # It applies basic static sanity checks on the dates, but it can’t
       # enforce valid calendar dates.
       - match: '-> ((\d{4})((([-/])(0[1-9]|1[0-2])(\5(0[1-9]|[1-2]\d|3[0-1])?)?)|([-/](W(0[1-9]|[1-4]\d|5[0-3])|Q[1-4])))?)(?![-/])(?=[\p{P} ]|$)'
